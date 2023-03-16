@@ -1,0 +1,180 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1674460784836' stop='1674460785129'>
+    <name>IF Web_Admin_Panel Login_Page : </name>
+    <title>IF Web_Admin_Panel Login_Page : </title>
+    <test-cases>
+        <test-case start='1674460784836' status='passed' stop='1674460784841'>
+            <name>verify Login_Page Title</name>
+            <title>verify Login_Page Title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+            </parameters>
+            <steps>
+                <step start='1674460784836' status='undefined'>
+                    <name>GET /session/:sessionId/title</name>
+                    <title>GET /session/:sessionId/title</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1674460784836' status='passed' stop='1674460784841'>
+                            <name>GET /session/:sessionId/title</name>
+                            <title>GET /session/:sessionId/title</title>
+                            <attachments>
+                                <attachment title='Response' source='c0e22da6-4b6d-4911-b14e-be9e53b6ee6f-attachment.json' type='application/json' size='29'/>
+                            </attachments>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1674460784842' status='broken' stop='1674460784977'>
+            <name>verify Login_Page Exists</name>
+            <title>verify Login_Page Exists</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+            </parameters>
+            <steps>
+                <step start='1674460784842' status='passed' stop='1674460784844'>
+                    <name>POST /session/:sessionId/elements</name>
+                    <title>POST /session/:sessionId/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='a62bbd24-2a27-469d-a9cc-69258698731a-attachment.json' type='application/json' size='66'/>
+                        <attachment title='Response' source='d8c77131-c8ff-4d96-912d-f3a7d3a9259a-attachment.json' type='application/json' size='29'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1674460784852' status='passed' stop='1674460784977'>
+                    <name>GET /session/:sessionId/screenshot</name>
+                    <title>GET /session/:sessionId/screenshot</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='d2f4d4c6-f14c-42bc-9953-a55438875ee3-attachment.png' type='image/png' size='68340'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title='Response' source='0e5d2b33-c7a9-4923-acc1-26aa91248b5a-attachment.json' type='application/json' size='2'/>
+            </attachments>
+            <failure>
+                <message>elem[prop] is not a function</message>
+                <stack-trace>TypeError: elem[prop] is not a function
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at LoginPage.isLoginPageExist (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/pageobjects/login.js:35:16)
+                    at Context.&lt;anonymous> (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/specs/login.spec.js:16:27)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1674460784978' status='broken' stop='1674460785129'>
+            <name>verify Login_Functionality with Valid user</name>
+            <title>verify Login_Functionality with Valid user</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-108.0.5359.124'/>
+            </parameters>
+            <steps>
+                <step start='1674460784979' status='broken' stop='1674460785129'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='55d814e1-8e72-40d1-a841-ee0f342734cc-attachment.json' type='application/json' size='59'/>
+                    </attachments>
+                    <steps>
+                        <step start='1674460784980' status='broken' stop='1674460785129'>
+                            <name>POST /session/:sessionId/elements</name>
+                            <title>POST /session/:sessionId/elements</title>
+                            <attachments>
+                                <attachment title='Request' source='2f6af981-fce0-4c67-ae69-3206cbc714fd-attachment.json' type='application/json' size='66'/>
+                            </attachments>
+                            <steps>
+                                <step start='1674460784980' status='passed' stop='1674460784987'>
+                                    <name>POST /session/:sessionId/element</name>
+                                    <title>POST /session/:sessionId/element</title>
+                                    <attachments>
+                                        <attachment title='Request' source='2d465e11-bbbb-4cfa-8df3-c8f888bdf710-attachment.json' type='application/json' size='56'/>
+                                        <attachment title='Response' source='f0d29c34-4dae-4575-8160-765fb1253485-attachment.json' type='application/json' size='775'/>
+                                    </attachments>
+                                    <steps/>
+                                </step>
+                                <step start='1674460784988' status='broken' stop='1674460785129'>
+                                    <name>POST /session/:sessionId/element</name>
+                                    <title>POST /session/:sessionId/element</title>
+                                    <attachments>
+                                        <attachment title='Request' source='a390bc70-ac97-4344-b351-beb8546846d5-attachment.json' type='application/json' size='59'/>
+                                    </attachments>
+                                    <steps>
+                                        <step start='1674460784989' status='passed' stop='1674460784991'>
+                                            <name>POST /session/:sessionId/elements</name>
+                                            <title>POST /session/:sessionId/elements</title>
+                                            <attachments>
+                                                <attachment title='Request' source='adb06525-85bf-494c-b1d5-8389933c17f5-attachment.json' type='application/json' size='59'/>
+                                                <attachment title='Response' source='5328a9de-db1c-4af1-a705-d7df84a7e32c-attachment.json' type='application/json' size='2'/>
+                                            </attachments>
+                                            <steps/>
+                                        </step>
+                                        <step start='1674460784993' status='passed' stop='1674460785004'>
+                                            <name>GET /session/:sessionId/screenshot</name>
+                                            <title>GET /session/:sessionId/screenshot</title>
+                                            <attachments>
+                                                <attachment title='Response' source='4d85ac96-c6e1-41bb-9758-404d9e735e57-attachment.json' type='application/json' size='772'/>
+                                            </attachments>
+                                            <steps/>
+                                        </step>
+                                        <step start='1674460785005' status='passed' stop='1674460785034'>
+                                            <name>POST /session/:sessionId/element</name>
+                                            <title>POST /session/:sessionId/element</title>
+                                            <attachments>
+                                                <attachment title='Request' source='6996d1d8-0c1c-4d7d-b45a-815d7963f29c-attachment.json' type='application/json' size='56'/>
+                                                <attachment title='Response' source='4397ccd9-4b11-4bbe-9aea-96189a0204ba-attachment.json' type='application/json' size='2'/>
+                                            </attachments>
+                                            <steps>
+                                                <step start='1674460785005' status='passed' stop='1674460785013'>
+                                                    <name>POST /session/:sessionId/elements</name>
+                                                    <title>POST /session/:sessionId/elements</title>
+                                                    <attachments>
+                                                        <attachment title='Request' source='61b4a342-4cdd-4384-a816-edd41cdccb8a-attachment.json' type='application/json' size='56'/>
+                                                        <attachment title='Response' source='275b5c40-5007-409b-be48-d3f598ed3e0a-attachment.json' type='application/json' size='775'/>
+                                                    </attachments>
+                                                    <steps/>
+                                                </step>
+                                            </steps>
+                                        </step>
+                                        <step start='1674460785094' status='passed' stop='1674460785129'>
+                                            <name>GET /session/:sessionId/title</name>
+                                            <title>GET /session/:sessionId/title</title>
+                                            <attachments>
+                                                <attachment title='Screenshot' source='ff46811b-eddf-485c-9202-6fd22c056e0b-attachment.png' type='image/png' size='68340'/>
+                                            </attachments>
+                                            <steps/>
+                                        </step>
+                                    </steps>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>elem[prop] is not a function</message>
+                <stack-trace>TypeError: elem[prop] is not a function
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at LoginPage.doLogin (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/pageobjects/login.js:42:9)
+                    at Context.&lt;anonymous> (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/specs/login.spec.js:20:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
