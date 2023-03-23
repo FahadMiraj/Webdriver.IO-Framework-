@@ -12,7 +12,7 @@ describe('IF Web_Admin_Panel- BlogArticle_Page : ', () => {
         await home.Click_Blog()
         await home.Click_BlogArticle()
         const title = await blogArticles.getBlogArticlePageTitle()
-        console.log('Blog Aritcle Page Title is :', title)
+        console.log('Blog Article Page Title is :', title)
         assert.equal(data.BlogArticlePageTitle, title, data.ErrorMsg)
     });
     

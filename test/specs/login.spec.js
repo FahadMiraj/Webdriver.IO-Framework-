@@ -17,6 +17,7 @@ describe('IF Web_Admin_Panel- Login_Page : ', () => {
     });
  
     it('verify Login_Functionality with Valid user',async () => {
+        await login.refresh()
         await login.doLogin(data.emailID,data.password)
         await expect(home.userProfile).toBeDisplayed()
     });

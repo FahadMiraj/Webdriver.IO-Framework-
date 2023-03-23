@@ -58,6 +58,12 @@ export default class Page {
         await inputFieldSelector.setValue(remotefilepath)
         await browser.pause(5000)
       }
+    async doWait(){
+        await browser.pause(3000)
+    }
+    async doRefresh(){
+        await browser.refresh()
+    }
      
     
      /*

@@ -25,4 +25,10 @@ export const data = {
     ArticleContent:"Testing",
     Header:"Add Article",
 
+    ////////////////////ADD BLOG_CATEGORY DATA////////////////////////
+    CategoryTitle:"Testing",
+    EditCategoryTitle:"123",
+    CategorySearchingText:"Test",
+    CategoryHeader:"",
+    BlogCategoryPageTitle:'Admin Panel | IslamicFinder',
     };

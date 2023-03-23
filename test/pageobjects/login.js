@@ -41,6 +41,9 @@ class LoginPage extends Page {
         await this.loginBtn.click()
         
     }
+    async refresh(){
+        super.doRefresh()
+    }
 
 }
 

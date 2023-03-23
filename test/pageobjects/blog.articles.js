@@ -106,15 +106,7 @@ async createBlogArticleWithoutPublish(title,thumbnailpath,coverimagepath,descipt
     //super.doClick(this.saveArticleBtn)
 }
 async createBlogArticleWithPublish(title,thumbnailpath,coverimagepath,desciption,content){
-    await browser.pause(1000)
-    await super.doSetValue(this.inputArticleTitle,title)
-    await super.addImageToInputField(thumbnailpath,this.thumbnailimage)
-    await super.addImageToInputField(coverimagepath,this.titleCoverimage)
-    await super.doSetValue(this.inputArticleDescription,desciption)
-    await super.doSetValue(this.inputArticleContent,content)
-    await super.doScroll()
-    await super.doClick(this.PublishwithYes)
-    await super.doClick(this.PublishwithNo)
+    await this.createBlogArticleWithoutPublish(title,thumbnailpath,coverimagepath,desciption,content)
     await super.doClick(this.PublishwithYes)
     //super.doClick(this.saveArticleBtn)
 }

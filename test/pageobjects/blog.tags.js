@@ -19,5 +19,32 @@ class BlogTagsPage extends Page {
     }
     ////////adding details for blog Tags page getters///////////
 
+    get BlogTagsHeader(){
+        return $("#rcDialogTitle5")
+    }
+    get inputBlogTagsName(){
+        return $("#name")
+    }
+    get inputBlogTagsNameSlug(){
+        return $("#slug")
+    }
+    get BlogCategoryCrossBtn(){
+        return $("//span[contains(@class,'anticon anticon-close ant-modal-close-icon')]")
+    }
+    get BlogCategoryCancelBtn(){
+        return $("//span[contains(text(),'Cancel')]")
+    }
+    get BlogCategorySaveBtn(){
+        return $("//span[contains(text(),'Save')]")
+    }
+    get selectAction(){
+
+    }
+    get edit(){
+        
+    }
+    get delete(){
+        
+    }
 }
 export default new BlogTagsPage();
