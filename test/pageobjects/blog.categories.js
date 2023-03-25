@@ -140,6 +140,23 @@ async doDeleteBlogCategory(title){
     await super.doWait()
     await super.doClick(this.deleteOK)
 }
+async doDeleteCreatedBlogCategory(title){
+    await super.doWait()
+    await this.refresh()
+    await this.doSearchBlogCategory(title)
+    await super.doWait()
+    await super.doClick(this.selectAction)
+    await super.doWait()
+    await super.doClick(this.delete)
+    await super.doWait()
+    await super.doClick(this.deleteOK)
+    await super.doWait()
+    await super.doClick(this.selectAction)
+    await super.doWait()
+    await super.doClick(this.delete)
+    await super.doWait()
+    await super.doClick(this.deleteOK)
+}
 async refresh(){
     super.doRefresh()
 }

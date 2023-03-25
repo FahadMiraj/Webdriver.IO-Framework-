@@ -71,6 +71,11 @@ describe('IF Web_Admin_Panel- BlogCategories_Page : ', () => {
         await expect(blogCategories.BlogCategoryNoData).not.toBeDisplayed()
         
     });
+    it('verify that all created Categories should be deleted successfully ', async () => {
+        await blogCategories.doDeleteCreatedBlogCategory(data.CategorySearchingText)
+        await expect(blogCategories.BlogCategoryNoData).toBeEnabled()
+        await expect(blogCategories.BlogCategoryNoData).toBeDisplayed()
+    });
 
     
 

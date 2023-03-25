@@ -37,7 +37,9 @@ export const config = {
            // './test/specs/login.spec.js',
            // './test/specs/home.spec.js',
            //'./test/specs/blog.articles.spec.js'
-           './test/specs/blog.categories.spec.js'
+           //'./test/specs/blog.categories.spec.js'
+           //'./test/specs/blog.tags.spec.js'
+           './test/specs/gallery.categories.spec.js'
         ]
     },
     // Patterns to exclude.

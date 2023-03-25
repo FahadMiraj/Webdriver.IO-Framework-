@@ -16,8 +16,8 @@ export const data = {
     rightlick:'You have done a right click',
     IF_Beta_URL:"https://beta.islamicfinder.org/news/",
     DynamicClick:'You have done a dynamic click',
-    ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
 
+    ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
     ArticleTitle:"Testing",
     ArticleThumbnail:"../mediafiles/thumbnail.jpg",
     ArticleCover:"../mediafiles/article.covertitle.jpg",
@@ -28,7 +28,24 @@ export const data = {
     ////////////////////ADD BLOG_CATEGORY DATA////////////////////////
     CategoryTitle:"Testing",
     EditCategoryTitle:"123",
-    CategorySearchingText:"Test",
+    CategorySearchingText:"Testing",
     CategoryHeader:"",
     BlogCategoryPageTitle:'Admin Panel | IslamicFinder',
-    };
+
+    ////////////////////ADD BLOG_TAGS DATA////////////////////////
+    TagsTitle:"Testing0",
+    EditTagsTitle:"123",
+    TagsSearchingText:"Testing0",
+    TagsHeader:"",
+    BlogTagsPageTitle:'Admin Panel | IslamicFinder',
+
+     ////////////////////ADD GALLERY_CATEGORIES DATA////////////////////////
+     GalleryCategoriesTitle:"Testing0",
+     GalleryCategoriesDescription:"Created For Testing",
+     EditGalleryCategoriesTitle:"123",
+     EditGalleryCategoriesDescription:" Purpose",
+     GalleryCategoriesSearchingText:"Testing0",
+     GalleryCategoriesHeader:"",
+     GalleryCategoriesPageTitle:'Admin Panel | IslamicFinder',
+
+};
