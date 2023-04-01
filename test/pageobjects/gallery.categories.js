@@ -157,7 +157,7 @@ async doDeleteCreatedGalleryCategories(title){
     await super.doClick(this.deleteOkGalleryCategories)
 }
 async refresh(){
-    super.doRefresh()
+     super.doRefresh()
 }  
 
 }

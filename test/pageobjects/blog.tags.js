@@ -152,7 +152,7 @@ async doDeleteCreatedBlogTags(title){
     await super.doClick(this.deleteOkTags)
 }
 async refresh(){
-    super.doRefresh()
+     super.doRefresh()
 }
 
 }

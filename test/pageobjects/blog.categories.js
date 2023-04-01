@@ -158,7 +158,7 @@ async doDeleteCreatedBlogCategory(title){
     await super.doClick(this.deleteOK)
 }
 async refresh(){
-    super.doRefresh()
+     super.doRefresh()
 }
 
 }

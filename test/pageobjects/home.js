@@ -47,7 +47,15 @@ class HomePage extends Page{
     get addGalleryCategory(){
         return $("//span[contains(text(),'Add Category')]")
     }
-    
+    get addBlogArticle(){
+        return $("//span[contains(text(),'Add Article')]")
+    }
+    get addBlogCategory(){
+        return $("//span[contains(text(),'Add Category')]")
+    }
+    get addBlogTags(){
+        return $("//span[contains(text(),'Add Tag')]")
+    }
 
     ////
     get SEO_Editor(){
@@ -82,34 +90,45 @@ class HomePage extends Page{
         return await super.doGetText(this.homeIF_header)
     }
     async Click_IF(){
-        return super.doClick(this.homeIF_header)
+        await super.doWait()
+        return await super.doClick(this.homeIF_header)
     }
     async Click_Blog(){
-        return super.doClick(this.Blog)
+        await super.doWait()
+        return await super.doClick(this.Blog)
     }
     async Click_BlogArticle(){
-        return super.doClick(this.Blog_Articles)
+        await super.doWait()
+        return await super.doClick(this.Blog_Articles)
     }
     async Click_BlogTags(){
-        return super.doClick(this.Blog_Tags)
+        await super.doWait()
+        return await super.doClick(this.Blog_Tags)
     }
     async Click_BlogCategories(){
-        return super.doClick(this.Blog_Categories)
+        await super.doWait()
+        return await super.doClick(this.Blog_Categories)
     }
     async Click_Gallery(){
-        return super.doClick(this.Gallery)
+        await super.doWait()
+        return await super.doClick(this.Gallery)
     }
     async Click_GalleryCards(){
+        await super.doWait()
         return super.doClick(this.Gallery_Cards)
     }
     async Click_GalleryCategories(){
-        return super.doClick(this.Gallery_Categories)
+        await super.doWait()
+        return await super.doClick(this.Gallery_Categories)
     }
     async Click_SEO(){
-        return super.doClick(this.SEO_Editor)
+        await super.doWait()
+        return await super.doClick(this.SEO_Editor)
     }
     
-    
+    async refresh(){
+         super.doRefresh()
+    }
 
 }
 export default new HomePage();

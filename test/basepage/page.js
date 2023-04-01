@@ -31,6 +31,12 @@ export default class Page {
         await browser.pause(3000)
         await browser.scroll(0, 150)
     } 
+    async doScrollToObject(element){
+        await element.waitForDisplayed()
+        await element.waitForClickable()
+        await element.scrollIntoView()
+        
+    }
 
     doGetPageTitle(pageTitle){
         browser.waitUntil(function(){
@@ -52,19 +58,67 @@ export default class Page {
         await inputField.setValue(imagePath);
          }
          */
-        await inputFieldSelector.waitForDisplayed()
+        //await inputFieldSelector.waitForDisplayed()
+        await browser.pause(1000)
         const filepath = path.join(__dirname,imagePath)
         const remotefilepath = await browser.uploadFile(filepath)
         await inputFieldSelector.setValue(remotefilepath)
         await browser.pause(5000)
       }
     async doWait(){
-        await browser.pause(3000)
+        await browser.pause(2000)
     }
     async doRefresh(){
         await browser.refresh()
     }
-     
+
+    async switchToNewTab (linkSelector) {
+        const linkElement = await $(linkSelector);
+      
+        // Get the current window handle
+        const currentHandle = await browser.getWindowHandle();
+      
+        // Open the link in a new tab
+        await linkElement.click();
+      
+        // Wait for the new tab to open
+        await browser.waitUntil(async () => {
+        const handles = await browser.getWindowHandles();
+        return handles.length > 1;
+        });
+        // Get the handles of all open windows/tabs
+        const handles = await browser.getWindowHandles();
+
+        // Find the handle of the new tab
+        const newHandle = handles.find(handle => handle !== currentHandle);
+
+        // Switch to the new tab
+        await browser.switchToWindow(newHandle);
+        
+    }
+    async selectDropdownOption(selector, optionText) {
+        const dropdown = await $(selector);
+        await dropdown.click();
+        await dropdown.waitForDisplayed();
+        const option = await $(`${selector} option=${optionText}`);
+        await option.scrollIntoView();
+        await option.click();
+      }
+    async specialScroll(selector) {
+        const element = $(selector);
+        browser.execute("arguments[0].scrollIntoView({block: 'center', inline: 'center'})", element);
+    }
+    async scrollUp() {
+        await browser.execute( async () => {
+        await window.scrollBy(0, -window.innerHeight);
+        });
+      }
+      async scrollDown() {
+        await browser.execute( async () => {
+        await window.scrollBy(0, window.innerHeight);
+        });
+      }
+      
     
      /*
       */

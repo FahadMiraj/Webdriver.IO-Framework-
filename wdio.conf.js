@@ -34,12 +34,13 @@ export const config = {
     suites:{
         complete:[
 
-           // './test/specs/login.spec.js',
-           // './test/specs/home.spec.js',
-           //'./test/specs/blog.articles.spec.js'
-           //'./test/specs/blog.categories.spec.js'
-           //'./test/specs/blog.tags.spec.js'
-           './test/specs/gallery.categories.spec.js'
+        //'./test/specs/login.spec.js',
+        // './test/specs/home.spec.js',
+        './test/specs/blog.articles.spec.js'
+        //'./test/specs/blog.categories.spec.js'
+        //'./test/specs/blog.tags.spec.js'
+        //'./test/specs/gallery.categories.spec.js'
+        //'./test/specs/gallery.cards.spec.js'
         ]
     },
     // Patterns to exclude.
@@ -161,7 +162,7 @@ export const config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 800000
     },
     //
     // =====

@@ -42,7 +42,7 @@ class LoginPage extends Page {
         
     }
     async refresh(){
-        super.doRefresh()
+         super.doRefresh()
     }
 
 }

@@ -6,14 +6,8 @@ class BlogArticlePage extends Page {
     get addBlogArticle(){
         return $("//span[contains(text(),'Add Article')]")
     }
-    get addBlogTags(){
-        return $("//span[contains(text(),'Add Tag')]")
-    }
-    get addBlogCategory(){
-        return $("//span[contains(text(),'Add Category')]")
-    }
     get inputBlogArticleSearch(){
-        return $("//span[contains(@class,'ant-input-affix-wrapper')]")
+        return $("//input[contains(@class,'ant-input')]")
     }
     get BlogArticleSearchBtn(){
         return $("//span[contains(@aria-label,'search')]")
@@ -22,7 +16,7 @@ class BlogArticlePage extends Page {
         return $("//span[contains(text(),'View All')]")
     }
     get BlogArticleNoData(){
-        return $("//div[contains(text(),'No Data')]")
+        return $("//div[contains(@class,'ant-empty-description')]")
     }
     ////////adding details for blog article page getters///////////
     get addArticleHeader(){
@@ -34,16 +28,10 @@ class BlogArticlePage extends Page {
     get articleSlug(){
         return $("(//input[contains(@class,'ant-input ant-input-lg formInputText')])[2]")
     }
-    get selectCategory(){
-        return $("//span[contains(@title,'Select Blog Category')]")
-    }
-    get selectAuthor(){
-        return $("//span[contains(@title,'Select Blog Author')]")
-    }
-    get thumbnailimage(){
+    get thumbnailImage(){
         return $("(//input[contains(@type,'file')])[1]")
     }
-    get titleCoverimage(){
+    get titleCoverImage(){
         return $("(//input[contains(@type,'file')])[2]")
     }
     get inputArticleDescription(){
@@ -52,65 +40,206 @@ class BlogArticlePage extends Page {
     get inputArticleContent(){
         return $("//div[contains(@class,'ql-editor ql-blank')]")
     }
-    get PublishwithYes(){
+    get editInputArticleContent(){
+        return $("//div[contains(@class,'ql-editor')]")
+    }
+    get PublishWithYes(){
         return $("//span[contains(text(),'Yes')]")
     }
-    get PublishwithNo(){
+    get PublishWithNo(){
         return $("//span[contains(text(),'No')]")
     }
     get saveArticleBtn(){
         return $("//span[contains(text(),'Save')]")
     }
-    get cancleArticleBtn(){
+    get cancelArticleBtn(){
         return $("//span[contains(text(),'Cancel')]")
     }
+    get blogArticleAddedMsg(){
+        return $("//*[contains(text(),'Record added successfully!')]")
+    }
+    get blogArticleUpdatedMsg(){
+        return $("//*[contains(text(),'Record updated successfully!')]")
+    }
+    get articleAuthorSelector(){
+        return $("(//span[contains(@class,'ant-select-selection-item')])[2]")
+    }
+    get articleAuthorScrollingObject(){
+        return $("(//*[contains(text(),'Amna Anwaar')])[1]")
+    }
+    get articleCategoryScrollingObject(){
+        return $("(//*[contains(text(),'Blog category-10988')])[1]")
+    }
+    get articleAuthorOption(){
+        return $("(//*[contains(text(),'Amna Anwaar')])[1]")
+    }
+    get articleCategorySelector(){
+        return $("(//span[contains(@class,'ant-select-selection-item')])[1]")
+    }
+    get articleCategoryOption(){
+        return $("(//*[contains(text(),'Blog category-58751')])[1]")
+    }
+    get articleTags(){
+        return $("(//input[contains(@class,'ant-input ant-input-lg formInputText')])[3]")
+    }
+    get articleTagsOption(){
+        return $("(//*[contains(text(),'Ramadan 2017')])[1]")
+    }
+    get selectActionArticle(){
+        return $("(//div[contains(@class,'ant-select-selector')])[1]")
+    }
+    get editArticle(){
+        return $("(//div[contains(text(),'Edit')])[2]")
+    }
+    get previewArticle(){
+        return $("(//div[contains(text(),'Preview')])[2]")
+    }
+    get deleteArticle(){
+        return $("//div[contains(text(),'Delete')]")
+    }
+    get deleteCancelArticle(){
+        return $("//span[contains(text(),'Cancel')]")
+    }
+    get deleteYesArticle(){
+        return $("//span[contains(text(),'Yes')]")
+    }
+
+
 /////////// Page Action ///////
 async getBlogArticlePageTitle(){
     return await super.doGetPageTitle(data.BlogArticlePageTitle)}
 
 async doAddArticle(){
+    await super.doWait()
     return await super.doClick(this.addBlogArticle)
-}
-async ViewAll_BlogArticles(){
-    return await super.doClick(this.BlogArticleAllBtn)
-}
-async searchBlogArticle(text){
-    await super.doSetValue(this.inputBlogArticleSearch,text)
-    await super.doClick(this.BlogArticleSearchBtn)
 }
 async getHeader_AddArticlePage(){
     return await super.doGetText(this.addArticleHeader)
 }
 async TapsViewAll(){
-    await super.doClick(this.BlogArticleAllBtn)
+    return await super.doClick(this.BlogArticleAllBtn)
 }
 async doSetArticleTitle(title){
-    await browser.pause(5000)
+    await super.doWait()
     super.doSetValue(this.inputArticleTitle,title)
 
 }
-async doClickCancleAddArticlePage(){
-    await super.doClick(this.cancleArticleBtn)
+async doClickCancelAddArticlePage(){
+    await super.doScrollToObject(this.cancelArticleBtn)
+    await super.doClick(this.cancelArticleBtn)
+    await super.scrollUp()
 
 }
-async createBlogArticleWithoutPublish(title,thumbnailpath,coverimagepath,desciption,content){
-    await browser.pause(1000)
+async doCreateBlogArticleWithoutPublish(title,thumbnailPath,coverImagePath,description,content){
+    await super.doClick(this.addBlogArticle)
+    await super.doWait()
     await super.doSetValue(this.inputArticleTitle,title)
-    await super.addImageToInputField(thumbnailpath,this.thumbnailimage)
-    await super.addImageToInputField(coverimagepath,this.titleCoverimage)
-    await super.doSetValue(this.inputArticleDescription,desciption)
+    await super.doWait()
+    await super.doClick(this.articleCategorySelector)
+    await super.doWait()
+    await super.doScrollToObject(this.articleCategoryScrollingObject)
+    await super.doWait()
+    await super.doClick(this.articleCategoryOption)
+    await super.doWait()
+    await super.doClick(this.articleAuthorSelector)
+    //await super.doWait()
+    //await super.doScrollToObject(this.articleAuthorScrollingObject)
+    await super.doWait()
+    await super.doClick(this.articleAuthorOption)
+    await super.doWait()
+    await super.addImageToInputField(thumbnailPath,this.thumbnailImage)
+    await super.addImageToInputField(coverImagePath,this.titleCoverImage)
+    await super.doWait()
+    await super.doSetValue(this.inputArticleDescription,description)
     await super.doSetValue(this.inputArticleContent,content)
     await super.doScroll()
-    await super.doClick(this.PublishwithYes)
-    await super.doClick(this.PublishwithNo)
-    //super.doClick(this.saveArticleBtn)
+    await super.doClick(this.PublishWithYes)
+    await super.doClick(this.PublishWithNo)
+    await super.doClick(this.saveArticleBtn)
+    await super.doWait()
+}
+async doSearchBlogArticle(title){
+    await super.doWait()
+    await super.scrollUp()
+    await super.doSetValue(this.inputBlogArticleSearch,title)
+    await super.doWait()
+    await super.doClick(this.BlogArticleSearchBtn)
+    await super.doWait()
+}
+async doDeleteBlogArticle(title,thumbnailPath,coverImagePath,description,content){
+    await super.doWait()
+    await this.doCreateBlogArticleWithoutPublish(title,thumbnailPath,coverImagePath,description,content)
+    await super.doWait()
+    await expect(this.addBlogArticle).toBeDisplayed()
+    await super.scrollUp()
+    await this.doSearchBlogArticle(title)
+    await super.doWait()
+    await super.doClick(this.selectActionArticle)
+    await super.doWait()
+    await super.doClick(this.deleteArticle)
+    await super.doWait()
+    await super.doClick(this.deleteYesArticle)
+}
+async doEditBlogArticle(title,thumbnailPath,coverImagePath,description,content,editTitle,editThumbnailPath,editCoverImagePath,editDescription,editContent){
+    await super.doWait()
+    await this.doCreateBlogArticleWithoutPublish(title,thumbnailPath,coverImagePath,description,content)
+    await expect(this.addBlogArticle).toBeDisplayed()
+    await super.scrollUp()
+    await this.doSearchBlogArticle(title)
+    await super.doWait()
+    await super.doClick(this.selectActionArticle)
+    await super.doWait()
+    await super.doClick(this.editArticle)
+    await super.doWait()
+    await super.scrollDown()
+    await super.doClick(this.PublishWithYes)
+    await super.doClick(this.PublishWithNo)
+    await super.doWait()
+    await super.doClick(this.articleTags)
+    await super.doWait()
+    await super.doClick(this.articleTagsOption)
+    await super.doWait()
+    await super.scrollUp()
+    await super.doSetValue(this.inputArticleTitle,editTitle)
+    await super.doWait()
+    await super.addImageToInputField(editThumbnailPath,this.thumbnailImage)
+    await super.addImageToInputField(editCoverImagePath,this.titleCoverImage)
+    await super.doWait()
+    await super.doSetValue(this.inputArticleDescription,editDescription)
+    await super.doWait()
+    await super.scrollDown()
+    await super.doSetValue(this.editInputArticleContent,editContent)
+    await super.doWait()
+    await super.doClick(this.saveArticleBtn)
+    await expect(this.addBlogArticle).toBeDisplayed()
+    await super.scrollUp()
+}
+async doDeleteCreatedBlogArticle(title){
+    await super.doWait()
+    await this.refresh()
+    await this.doSearchBlogArticle(title)
+    await super.doWait()
+    await super.doClick(this.selectActionArticle)
+    await super.doWait()
+    await super.doClick(this.deleteArticle)
+    await super.doWait()
+    await super.doClick(this.deleteYesArticle)
+    await super.doWait()
+    await super.doClick(this.selectActionArticle)
+    await super.doWait()
+    await super.doClick(this.deleteArticle)
+    await super.doWait()
+    await super.doClick(this.deleteYesArticle)
+}
+
+async refresh(){
+    super.doRefresh()
 }
 async createBlogArticleWithPublish(title,thumbnailpath,coverimagepath,desciption,content){
     await this.createBlogArticleWithoutPublish(title,thumbnailpath,coverimagepath,desciption,content)
     await super.doClick(this.PublishwithYes)
     //super.doClick(this.saveArticleBtn)
 }
-
 
 }
 

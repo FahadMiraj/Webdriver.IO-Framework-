@@ -1,29 +1,36 @@
 export const data = {
+    ////////////////////GENERAL DATA////////////////////////
+    Name :'Fahad Miraj',
+    Address:'Lahore, Pakistan',
+    ErrorMsg:' Page Having Unknown Errors',
+    IF_Beta_URL:"https://beta.islamicfinder.org/news/",
+    
+    ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
     emailID: 'faisal.ali@venturedive.com',
     password: '12345678',
-    Adress:'Lahore, Pakistan',
-    Name :'Fahad Miraj',
     LoginPageTitle:'Admin Panel | IslamicFinder',
-    HomePageTitle:'Admin Panel | IslamicFinder',
-    BlogArticlePageTitle:'Admin Panel | IslamicFinder',
-    SearchArticleText:'abcd',
-    IF_Header:'IslamicFinder',
-    ErrorMsg:'page having issues',
-    uplaodimage:"",
-    selectFile:"",
-    SEOPageTitle:"SEO Editor",
-    doubleclick:'You have done a double click',
-    rightlick:'You have done a right click',
-    IF_Beta_URL:"https://beta.islamicfinder.org/news/",
-    DynamicClick:'You have done a dynamic click',
 
     ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
-    ArticleTitle:"Testing",
+    HomePageTitle:'Admin Panel | IslamicFinder',
+    IF_Header:'IslamicFinder',
+
+    ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
+    BlogArticlePageTitle:'Admin Panel | IslamicFinder',
+    ArticleTitle:"Testing12",
+    ArticleCategory:"$('//*[contains(text(),'Women Guide')])[1]')",
+    ArticleAuthor:"$('//*[contains(text(),'Hammad Shabbir')])[1]')",
+    ArticleTagSelection:"(//*[contains(text(),'Ramadan 2017')])[1]",
+    SearchArticleText:'Testing12',
     ArticleThumbnail:"../mediafiles/thumbnail.jpg",
-    ArticleCover:"../mediafiles/article.covertitle.jpg",
-    ArticleDescription:"Testing",
+    ArticleCover:"../mediafiles/article.covertitle.jpeg",
+    ArticleDescription:"Testing is the way to go",
     ArticleContent:"Testing",
-    Header:"Add Article",
+    EditArticleTitle:" WebdriverIO",
+    EditArticleThumbnail:"../mediafiles/editthumbnail.jpeg",
+    EditArticleCover:"../mediafiles/editarticle.covertitle.jpeg",
+    EditArticleDescription:" Automation Testing",
+    EditArticleContent:" EndToEnd WebdriverIO FrameWork",
+    EditArticlePageHeader:"Add Article",
 
     ////////////////////ADD BLOG_CATEGORY DATA////////////////////////
     CategoryTitle:"Testing",
@@ -47,5 +54,28 @@ export const data = {
      GalleryCategoriesSearchingText:"Testing0",
      GalleryCategoriesHeader:"",
      GalleryCategoriesPageTitle:'Admin Panel | IslamicFinder',
+
+    ////////////////////ADD GALLERY_CARDS DATA////////////////////////
+    GalleryCardsTitle:"Testing0",
+    CardCategory_Attribute:"innerText",
+    CardCategory_Value:"Eid",
+    GalleryCardsDescription:"Created For Testing",
+    EditGalleryCardsTitle:"123",
+    EditGalleryCardsDescription:"Created For Testing Purpose",
+    GalleryCardsSearchingText:"Testing0",
+    GalleryCardsHeader:"Upload Card",
+    GalleryCardsPageTitle:'Admin Panel | IslamicFinder',
+    CardThumbnail:"../mediafiles/card.thumbnail.png",
+    CardImage:"../mediafiles/card.image.jpeg",
+    EditCardThumbnail:"../mediafiles/editcard.thumbnail.jpg",
+    EditCardImage:"../mediafiles/editcard.image.jpg",
+
+    ////////////////////SEO PAGE EDITOR DATA////////////////////////
+    SEOPageTitle:"SEO Editor",
+    Page:"",
+    Language:"",
+    MetaTitle:"",
+    MetaDesc:"",
+    TextBox:"",
 
 };

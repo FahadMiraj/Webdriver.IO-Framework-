@@ -39,20 +39,20 @@ describe(' IF Web_Admin_Panel: DashBoard/Home Module TestCases : ', () => {
     });
     it('verify Blog_Page Article',async () => {
       await home.Click_BlogArticle()
-      await expect(blogArticles.addBlogArticle).toBeDisplayed()
-      await expect(blogArticles.addBlogArticle).toBeExisting()
+      await expect(home.addBlogArticle).toBeDisplayed()
+      await expect(home.addBlogArticle).toBeExisting()
 
     });
     it('verify Blog_Page Tags',async () => {
       await home.Click_BlogTags()
-      await expect(blogArticles.addBlogTags).toBeDisplayed()
-      await expect(blogArticles.addBlogTags).toBeExisting()
+      await expect(home.addBlogTags).toBeDisplayed()
+      await expect(home.addBlogTags).toBeExisting()
 
     });
     it('verify Blog_Page Categories',async () => {
       await home.Click_BlogCategories()
-      await expect(blogArticles.addBlogCategory).toBeDisplayed()
-      await expect(blogArticles.addBlogCategory).toBeExisting()
+      await expect(home.addBlogCategory).toBeDisplayed()
+      await expect(home.addBlogCategory).toBeExisting()
 
     });
     it('verify Gallery Page',async () => {
@@ -65,7 +65,6 @@ describe(' IF Web_Admin_Panel: DashBoard/Home Module TestCases : ', () => {
     it('verify Gallery_Page Categories',async () => {
       await home.Click_GalleryCategories()
       await expect(home.addGalleryCategory).toBeDisplayed()
-      
 
     });
 
@@ -75,11 +74,9 @@ describe(' IF Web_Admin_Panel: DashBoard/Home Module TestCases : ', () => {
 
     });
     
-    
     it('verify SEO_Editor Page',async () => {
       await home.Click_SEO()
       await expect(home.SEO_PageHeaderText).toBeDisplayed()
-      
 
     });
      
