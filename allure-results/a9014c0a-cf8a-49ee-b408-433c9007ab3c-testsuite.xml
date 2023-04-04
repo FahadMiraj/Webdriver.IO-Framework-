@@ -1,0 +1,130 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1680647860710' stop='1680647864781'>
+    <name>IF Web_Admin_Panel- SEO-Editor_Page : </name>
+    <title>IF Web_Admin_Panel- SEO-Editor_Page : </title>
+    <test-cases>
+        <test-case start='1680647860710' status='broken' stop='1680647864732'>
+            <name>verify SEO-Editor_Page Title</name>
+            <title>verify SEO-Editor_Page Title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.64'/>
+            </parameters>
+            <steps>
+                <step start='1680647864715' status='broken' stop='1680647864732'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='b32affa7-fe6c-48be-a76f-38923031180c-attachment.json' type='application/json' size='82'/>
+                    </attachments>
+                    <steps>
+                        <step start='1680647864725' status='broken' stop='1680647864732'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)</message>
+                <stack-trace>no such window: no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at HomePage.doClick (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/basepage/page.js:11:5)
+                    at HomePage.Click_IF (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/pageobjects/home.js:94:16)
+                    at seoEditor.navigateToSeoPage (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/pageobjects/seo.editor.js:75:9)
+                    at Context.&lt;anonymous> (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/specs/seo.editor.spec.js:16:9)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1680647864734' status='broken' stop='1680647864766'>
+            <name>verify SEO-Editor_Page Header Title</name>
+            <title>verify SEO-Editor_Page Header Title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.64'/>
+            </parameters>
+            <steps>
+                <step start='1680647864735' status='broken' stop='1680647864766'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='a103b5c1-d3b9-4a5b-83c6-06804e7755ce-attachment.json' type='application/json' size='72'/>
+                    </attachments>
+                    <steps>
+                        <step start='1680647864750' status='broken' stop='1680647864766'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)</message>
+                <stack-trace>no such window: no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1680647864766' status='broken' stop='1680647864781'>
+            <name>verify SEO-Editor_Page should have Save button that should be clickable as well </name>
+            <title>verify SEO-Editor_Page should have Save button that should be clickable as well </title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.64'/>
+            </parameters>
+            <steps>
+                <step start='1680647864766' status='broken' stop='1680647864781'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='c725769a-0906-4b4b-af32-cdfa9f105999-attachment.json' type='application/json' size='68'/>
+                    </attachments>
+                    <steps>
+                        <step start='1680647864773' status='broken' stop='1680647864781'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)</message>
+                <stack-trace>no such window: no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at Object.executeCommandBe (file:///home/fahad.miraj/Desktop/WebDriverIO_FrameWork/node_modules/expect-webdriverio/lib/utils.js:41:16)
+                    at Context.&lt;anonymous> (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/specs/seo.editor.spec.js:27:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

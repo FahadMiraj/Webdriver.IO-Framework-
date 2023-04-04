@@ -71,11 +71,12 @@ export const data = {
     EditCardImage:"../mediafiles/editcard.image.jpg",
 
     ////////////////////SEO PAGE EDITOR DATA////////////////////////
-    SEOPageTitle:"SEO Editor",
+    SEOPageTitle:'Admin Panel | IslamicFinder',
+    SeoPageHeader:"SEO Editor",
     Page:"",
     Language:"",
-    MetaTitle:"",
-    MetaDesc:"",
-    TextBox:"",
+    MetaTitle:"TESTING TITLE",
+    MetaDesc:"TESTING DESCRIPTION",
+    TextBox:"WEBDRIVER.IO, WAY TO GO",
 
 };

@@ -8,14 +8,12 @@ const path = require('path')
 describe('IF Web_Admin_Panel- BlogArticle_Page : ', () => {
     
     it('verify BlogArticle_Page Title', async() => {
-        await home.Click_IF()
-        await home.Click_Blog()
-        await home.Click_BlogArticle()
+        await blogArticles.navigateToBlogArticle()
         const title = await blogArticles.getBlogArticlePageTitle()
         console.log('Blog Article Page Title is :', title)
         assert.equal(data.BlogArticlePageTitle, title, data.ErrorMsg)
     });
-    
+      
     it('verify that there should be NO_Data Table if there is no Article created or added', async() => {
         await expect(blogArticles.BlogArticleNoData).not.toBeDisplayed()
         await expect(blogArticles.BlogArticleNoData).not.toBeExisting()
@@ -63,6 +61,11 @@ describe('IF Web_Admin_Panel- BlogArticle_Page : ', () => {
         await expect(blogArticles.BlogArticleNoData).not.toBeExisting()
         await expect(blogArticles.BlogArticleNoData).not.toBeDisplayed()
         
+    });
+    it('verify the Blog Article Preview Page in the NewTab ', async () => {
+        await blogArticles.doVerifyPreviewOnNewTab()
+        await expect(blogArticles.titleOnPreviewPage).toBeEnabled()
+        await expect(blogArticles.titleOnPreviewPage).toBeDisplayed()
     });
     it('verify that all Blog Article should be deleted successfully ', async () => {
         await blogArticles.doDeleteCreatedBlogArticle(data.SearchArticleText)

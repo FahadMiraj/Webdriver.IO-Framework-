@@ -11,13 +11,12 @@ const path = require('path')
 
 describe('IF Web_Admin_Panel- GalleryCategories_Page : ', () => {
     it('verify GalleryCategories_Page Title', async() => {
-        await home.Click_IF()
-        await home.Click_Gallery()
-        await home.Click_GalleryCategories()
+        galleryCategories.navigateToGalleryCategories()
         const title = await galleryCategories.getGalleryCategoriesPageTitle()
         console.log('Gallery Categories Page Title is :', title)
         assert.equal(data.GalleryCategoriesPageTitle, title, data.ErrorMsg)
     });
+
     it('verify that there should not be NO_Data Table if there will be tags available', async() => {
         await expect(galleryCategories.GalleryCategoryNoData).not.toBeDisplayed()
         await expect(galleryCategories.GalleryCategoryNoData).not.toBeExisting()

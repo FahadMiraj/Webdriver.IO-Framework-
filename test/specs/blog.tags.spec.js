@@ -9,14 +9,13 @@ import login from "../pageobjects/login";
 const path = require('path')
 
 describe('IF Web_Admin_Panel- BlogTags_Page : ', () => {
-    it('verify BlogCategories_Page Title', async() => {
-        await home.Click_IF()
-        await home.Click_Blog()
-        await home.Click_BlogTags()
+    it('verify BlogTags_Page Title', async() => {
+        blogTags.navigateToBlogTags()
         const title = await blogTags.getBlogTagsPageTitle()
         console.log('Blog Tags Page Title is :', title)
         assert.equal(data.BlogTagsPageTitle, title, data.ErrorMsg)
     });
+
     it('verify that there should not be NO_Data Table if there will be tags available', async() => {
         await expect(blogTags.BlogTagsNoData).not.toBeDisplayed()
         await expect(blogTags.BlogTagsNoData).not.toBeExisting()
@@ -76,5 +75,5 @@ describe('IF Web_Admin_Panel- BlogTags_Page : ', () => {
         await expect(blogTags.BlogTagsNoData).toBeEnabled()
         await expect(blogTags.BlogTagsNoData).toBeDisplayed()
     });
-    
+
 });

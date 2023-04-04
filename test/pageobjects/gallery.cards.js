@@ -76,7 +76,13 @@ class GalleryCardsPage extends Page {
         return $("#description")
     }
     /////////// Page Action ///////
-
+    
+    async navigateToGalleryCards(){
+        await home.refresh()
+        await home.Click_IF()
+        await home.Click_Gallery()
+        await home.Click_GalleryCards()
+    }
     async getGalleryCardsPageTitle(){
         return await super.doGetPageTitle(data.GalleryCardsPageTitle)
     }

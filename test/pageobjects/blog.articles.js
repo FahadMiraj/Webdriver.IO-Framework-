@@ -1,5 +1,6 @@
 import { data } from '../general/constants.js';
 import Page from "../basepage/page"
+import home from './home.js';
 
 class BlogArticlePage extends Page {
 
@@ -103,9 +104,19 @@ class BlogArticlePage extends Page {
     get deleteYesArticle(){
         return $("//span[contains(text(),'Yes')]")
     }
+    get titleOnPreviewPage(){
+        return $("//*[contains(text(),'Testing12')]")
+    }
 
 
 /////////// Page Action ///////
+async navigateToBlogArticle(){
+    await this.refresh()
+    await home.Click_IF()
+    await home.Click_Blog()
+    await home.Click_BlogArticle()
+}
+
 async getBlogArticlePageTitle(){
     return await super.doGetPageTitle(data.BlogArticlePageTitle)}
 
@@ -165,6 +176,11 @@ async doSearchBlogArticle(title){
     await super.doWait()
     await super.doClick(this.BlogArticleSearchBtn)
     await super.doWait()
+}
+async doVerifyPreviewOnNewTab(){
+    await super.doClick(this.selectActionArticle)
+    await super.doWait()
+    await super.switchToNewTab(this.previewArticle)
 }
 async doDeleteBlogArticle(title,thumbnailPath,coverImagePath,description,content){
     await super.doWait()

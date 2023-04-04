@@ -1,0 +1,134 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1680567954829' stop='1680567964252'>
+    <name>IF Web_Admin_Panel- SEO-Editor_Page : </name>
+    <title>IF Web_Admin_Panel- SEO-Editor_Page : </title>
+    <test-cases>
+        <test-case start='1680567954830' status='broken' stop='1680567964252'>
+            <name>verify SEO-Editor_Page should not be created when there is no Description entered </name>
+            <title>verify SEO-Editor_Page should not be created when there is no Description entered </title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.64'/>
+            </parameters>
+            <steps>
+                <step start='1680567958833' status='passed' stop='1680567958843'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='38bfc0a4-73e5-4a90-a0ae-09c711cb1a49-attachment.json' type='application/json' size='82'/>
+                        <attachment title='Response' source='c497e991-3382-48f8-94b5-02ab1fd5592f-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567958844' status='passed' stop='1680567958851'>
+                    <name>POST /session/:sessionId/execute/sync</name>
+                    <title>POST /session/:sessionId/execute/sync</title>
+                    <attachments>
+                        <attachment title='Request' source='904975b7-b317-4bfb-8e72-5923ee65a83d-attachment.json' type='application/json' size='8384'/>
+                        <attachment title='Response' source='d38cfb45-21c9-41ed-89b5-0d74b924e9cc-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567958851' status='passed' stop='1680567958883'>
+                    <name>POST /session/:sessionId/element/d5b83581-9a56-46c3-bc80-ab5786a7afa3/click</name>
+                    <title>POST /session/:sessionId/element/d5b83581-9a56-46c3-bc80-ab5786a7afa3/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1680567960885' status='passed' stop='1680567960894'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='3bb0ae33-3a00-4618-b3b8-ee010e76cffc-attachment.json' type='application/json' size='70'/>
+                        <attachment title='Response' source='0b4ec98f-4018-4715-b0ca-78d391334d92-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567960895' status='passed' stop='1680567960900'>
+                    <name>POST /session/:sessionId/execute/sync</name>
+                    <title>POST /session/:sessionId/execute/sync</title>
+                    <attachments>
+                        <attachment title='Request' source='57a26185-4e4f-4cc9-918f-761ecb906fb3-attachment.json' type='application/json' size='8384'/>
+                        <attachment title='Response' source='e2459e6b-d220-47cb-8cc7-b0e9669bd896-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567960900' status='passed' stop='1680567960972'>
+                    <name>POST /session/:sessionId/element/be2649aa-a07f-4274-9e39-53808b0320e4/click</name>
+                    <title>POST /session/:sessionId/element/be2649aa-a07f-4274-9e39-53808b0320e4/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1680567960973' status='passed' stop='1680567962034'>
+                    <name>POST /session/:sessionId/refresh</name>
+                    <title>POST /session/:sessionId/refresh</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1680567964035' status='passed' stop='1680567964044'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='2494f749-5d2c-4fff-937a-7afa12a3da26-attachment.json' type='application/json' size='94'/>
+                        <attachment title='Response' source='9f2dded1-9bb1-42a7-9059-6903f3ed7b98-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567964045' status='passed' stop='1680567964050'>
+                    <name>POST /session/:sessionId/execute/sync</name>
+                    <title>POST /session/:sessionId/execute/sync</title>
+                    <attachments>
+                        <attachment title='Request' source='4759268b-6b51-4793-bff8-3973935b752d-attachment.json' type='application/json' size='8384'/>
+                        <attachment title='Response' source='ae8693a4-3eb0-4283-92e1-c572e60e03b7-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567964050' status='passed' stop='1680567964085'>
+                    <name>POST /session/:sessionId/element/39794949-92e3-4a45-b781-f7de40d87c8e/click</name>
+                    <title>POST /session/:sessionId/element/39794949-92e3-4a45-b781-f7de40d87c8e/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1680567964086' status='passed' stop='1680567964093'>
+                    <name>POST /session/:sessionId/elements</name>
+                    <title>POST /session/:sessionId/elements</title>
+                    <attachments>
+                        <attachment title='Request' source='c96101d4-023e-4efd-a17d-930da6c32fd3-attachment.json' type='application/json' size='93'/>
+                        <attachment title='Response' source='3785e4a5-aaed-4741-a870-071ec854d06a-attachment.json' type='application/json' size='912'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1680567964102' status='passed' stop='1680567964251'>
+                    <name>GET /session/:sessionId/element/e00c8aee-ebdc-4420-8e54-277378897151/text</name>
+                    <title>GET /session/:sessionId/element/e00c8aee-ebdc-4420-8e54-277378897151/text</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='fc9dd1d9-2438-4892-ae3d-3bfb21e65c74-attachment.png' type='image/png' size='70878'/>
+                    </attachments>
+                    <steps>
+                        <step start='1680567964102' status='passed' stop='1680567964111'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>item.getText(...).includes is not a function</message>
+                <stack-trace>TypeError: item.getText(...).includes is not a function
+                    at find (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/basepage/page.js:128:68)
+                    at Array.find (&lt;anonymous>)
+                    at seoEditor.scrollUntilItemDisplayed (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/basepage/page.js:128:38)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at seoEditor.doCreateSeoPageWithoutDesc (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/pageobjects/seo.editor.js:133:9)
+                    at Context.&lt;anonymous> (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/specs/seo.editor.spec.js:46:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

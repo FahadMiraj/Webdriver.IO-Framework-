@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1680647855670' stop='1680647858692'>
+    <name>IF Web_Admin_Panel- GalleryCards_Page : </name>
+    <title>IF Web_Admin_Panel- GalleryCards_Page : </title>
+    <test-cases>
+        <test-case start='1680647855670' status='broken' stop='1680647858691'>
+            <name>verify GalleryCards_Page Title</name>
+            <title>verify GalleryCards_Page Title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-111.0.5563.64'/>
+            </parameters>
+            <steps>
+                <step start='1680647858674' status='broken' stop='1680647858691'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='a84a2eb1-92ee-46fb-9568-30fbdade2216-attachment.json' type='application/json' size='82'/>
+                    </attachments>
+                    <steps>
+                        <step start='1680647858684' status='broken' stop='1680647858691'>
+                            <name>GET /session/:sessionId/screenshot</name>
+                            <title>GET /session/:sessionId/screenshot</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)</message>
+                <stack-trace>no such window: no such window: target window already closed
+                from unknown error: web view not found
+                  (Session info: chrome=111.0.5563.64)
+                    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+                    at HomePage.doClick (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/basepage/page.js:11:5)
+                    at HomePage.Click_IF (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/pageobjects/home.js:94:16)
+                    at Context.&lt;anonymous> (/home/fahad.miraj/Desktop/WebDriverIO_FrameWork/test/specs/gallery.cards.spec.js:16:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

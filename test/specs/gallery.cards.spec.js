@@ -12,17 +12,12 @@ const path = require('path')
 
 describe('IF Web_Admin_Panel- GalleryCards_Page : ', () => {
     it('verify GalleryCards_Page Title', async() => {
-        await browser.pause(1000)
-        await home.Click_IF()
-        await browser.pause(1000)
-        await home.Click_Gallery()
-        await browser.pause(1000)
-        await home.Click_GalleryCards()
-        await browser.pause(1000)
+        galleryCards.navigateToGalleryCards()
         const title = await galleryCards.getGalleryCardsPageTitle()
         console.log('Gallery Cards Page Title is :', title)
         assert.equal(data.GalleryCardsPageTitle, title, data.ErrorMsg )
     });
+    
     it('verify that there should not be NO_Data Table if there will be tags available', async() => {
         await expect(galleryCards.GalleryCardsNoData).not.toBeDisplayed()
         await expect(galleryCards.GalleryCardsNoData).not.toBeExisting()

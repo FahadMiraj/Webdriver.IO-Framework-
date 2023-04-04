@@ -41,6 +41,7 @@ export const config = {
         //'./test/specs/blog.tags.spec.js'
         //'./test/specs/gallery.categories.spec.js'
         //'./test/specs/gallery.cards.spec.js'
+        //'./test/specs/seo.editor.spec.js'
         ]
     },
     // Patterns to exclude.

@@ -1,3 +1,4 @@
+import { keys } from 'wd/lib/commands';
 const path = require('path');
 export default class Page {
 
@@ -72,9 +73,8 @@ export default class Page {
         await browser.refresh()
     }
 
-    async switchToNewTab (linkSelector) {
-        const linkElement = await $(linkSelector);
-      
+    async switchToNewTab (linkElement) {
+        
         // Get the current window handle
         const currentHandle = await browser.getWindowHandle();
       
@@ -94,6 +94,8 @@ export default class Page {
 
         // Switch to the new tab
         await browser.switchToWindow(newHandle);
+        await browser.pause(3000)
+        await browser.switchToWindow(currentHandle)
         
     }
     async selectDropdownOption(selector, optionText) {
@@ -118,7 +120,32 @@ export default class Page {
         await window.scrollBy(0, window.innerHeight);
         });
       }
+      async scrollUntilItemDisplayed(dropdownSelector, itemText) {
+        const dropdown = await $(dropdownSelector);
+        await dropdown.waitForDisplayed();
+        await dropdown.click();
       
+        while (true) {
+          const items = await $$(`${dropdownSelector} option`);
+          const selectedItem = items.find((item) => item.getText().includes(itemText));
+          
+          if (selectedItem) {
+            await selectedItem.scrollIntoView();
+            await selectedItem.click();
+            break;
+          }
+          
+          await browser.executeScript('arguments[0].scrollBy(0, 50)', dropdown);
+          await browser.pause(500);
+        }
+      }
+
+      async clearText(element){
+        await element.click()
+        await browser.keys(['Control','a'])
+        await browser.keys('Backspace')
+
+      }
     
      /*
       */

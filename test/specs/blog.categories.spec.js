@@ -10,13 +10,12 @@ const path = require('path')
 describe('IF Web_Admin_Panel- BlogCategories_Page : ', () => {
     
     it('verify BlogCategories_Page Title', async() => {
-        await home.Click_IF()
-        await home.Click_Blog()
-        await home.Click_BlogCategories()
+        blogCategories.navigateToBlogCategories()
         const title = await blogCategories.getBlogCategoryPageTitle()
         console.log('Blog Categories Page Title is :', title)
         assert.equal(data.BlogCategoryPageTitle, title, data.ErrorMsg)
     });
+
     it('verify that there should be NO_Data Table if there will be categories available', async() => {
         await expect(blogCategories.BlogCategoryNoData).not.toBeDisplayed()
         await expect(blogCategories.BlogCategoryNoData).not.toBeExisting()
@@ -76,7 +75,5 @@ describe('IF Web_Admin_Panel- BlogCategories_Page : ', () => {
         await expect(blogCategories.BlogCategoryNoData).toBeEnabled()
         await expect(blogCategories.BlogCategoryNoData).toBeDisplayed()
     });
-
-    
 
 });

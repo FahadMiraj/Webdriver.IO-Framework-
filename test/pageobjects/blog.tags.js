@@ -66,6 +66,12 @@ class BlogTagsPage extends Page {
         }
     
     /////////// Page Action ///////
+async navigateToBlogTags(){
+    await home.refresh()
+    await home.Click_IF()
+    await home.Click_Blog()
+    await home.Click_BlogTags()
+}    
 
 async getBlogTagsPageTitle(){
     return await super.doGetPageTitle(data.BlogTagsPageTitle)

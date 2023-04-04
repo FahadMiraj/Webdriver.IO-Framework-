@@ -72,6 +72,12 @@ class GalleryCategoriesPage extends Page {
     }
 
 /////////// Page Action ///////
+async navigateToGalleryCategories(){
+    await home.refresh()
+    await home.Click_IF()
+    await home.Click_Gallery()
+    await home.Click_GalleryCategories()
+}
 async getGalleryCategoriesPageTitle(){
     return await super.doGetPageTitle(data.GalleryCategoriesPageTitle)
 }

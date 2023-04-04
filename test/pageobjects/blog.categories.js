@@ -64,6 +64,12 @@ class BlogCategoriesPage extends Page {
     }
 
     /////////// Page Action ///////
+async navigateToBlogCategories(){
+    await home.refresh()
+    await home.Click_IF()
+    await home.Click_Blog()
+    await home.Click_BlogCategories()
+}
 
 async getBlogCategoryPageTitle(){
     return await super.doGetPageTitle(data.BlogCategoryPageTitle)}
