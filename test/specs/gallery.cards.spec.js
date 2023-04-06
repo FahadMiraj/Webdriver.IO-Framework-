@@ -1,18 +1,10 @@
 import { assert } from "chai";
-import Page from "../basepage/page";
 import { data } from "../general/constants";
-import blogArticles from "../pageobjects/blog.articles";
-import blogCategories from "../pageobjects/blog.categories";
-import blogTags from "../pageobjects/blog.tags";
 import galleryCards from "../pageobjects/gallery.cards";
-import galleryCategories from "../pageobjects/gallery.categories";
-import home from "../pageobjects/home";
-import login from "../pageobjects/login";
-const path = require('path')
 
 describe('IF Web_Admin_Panel- GalleryCards_Page : ', () => {
     it('verify GalleryCards_Page Title', async() => {
-        galleryCards.navigateToGalleryCards()
+        await galleryCards.navigateToGalleryCards()
         const title = await galleryCards.getGalleryCardsPageTitle()
         console.log('Gallery Cards Page Title is :', title)
         assert.equal(data.GalleryCardsPageTitle, title, data.ErrorMsg )

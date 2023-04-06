@@ -1,6 +1,6 @@
 import { data } from '../general/constants.js';
 import Page from "../basepage/page"
-
+import home from './home.js';
 class BlogCategoriesPage extends Page {
 
     get addBlogCategory(){

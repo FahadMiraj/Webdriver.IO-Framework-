@@ -28,21 +28,49 @@ export const config = {
     //
     specs: [
         
-        './test/specs/main.spec.js'
+        './test/specs/login.spec.js',
+        //'./test/specs/main.spec.js'
         //'./test/specs/**/*.js'
     ], 
     suites:{
+        login:[
+            './test/specs/login.spec.js',
+        ],
+        home:[
+            './test/specs/home.spec.js',
+        ],
+        blogArticles:[
+            './test/specs/blog.articles.spec.js'
+        ],
+        blogCategories:[
+            './test/specs/blog.categories.spec.js'
+        ],
+        blogTags:[
+            './test/specs/blog.tags.spec.js'
+        ],
+        galleryCategories:[
+            './test/specs/gallery.categories.spec.js'
+        ],
+        galleryCards:[
+            './test/specs/gallery.cards.spec.js'
+        ],
+        seoEditor:[
+            './test/specs/seo.editor.spec.js'
+        ],
         complete:[
-
-        //'./test/specs/login.spec.js',
-        // './test/specs/home.spec.js',
-        './test/specs/blog.articles.spec.js'
-        //'./test/specs/blog.categories.spec.js'
-        //'./test/specs/blog.tags.spec.js'
-        //'./test/specs/gallery.categories.spec.js'
-        //'./test/specs/gallery.cards.spec.js'
-        //'./test/specs/seo.editor.spec.js'
+            './test/specs/login.spec.js',
+            './test/specs/home.spec.js',
+            './test/specs/blog.articles.spec.js',
+            './test/specs/blog.categories.spec.js',
+            './test/specs/blog.tags.spec.js',
+            './test/specs/gallery.categories.spec.js',
+            './test/specs/gallery.cards.spec.js',
+            './test/specs/seo.editor.spec.js'
+        ],
+        e2e:[
+            './test/specs/main.spec.js'
         ]
+
     },
     // Patterns to exclude.
     exclude: [

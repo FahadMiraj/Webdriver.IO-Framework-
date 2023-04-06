@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { data } from "../general/constants";
-import home from "../pageobjects/home";
 import login from "../pageobjects/login";
+import home from "../pageobjects/home";
 
 describe('IF Web_Admin_Panel- Login_Page : ', () => {
     

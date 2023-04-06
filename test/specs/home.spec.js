@@ -1,9 +1,6 @@
 import { assert } from "chai";
-import { not } from "wdio-wait-for";
 import { data } from "../general/constants";
-import blogArticles from "../pageobjects/blog.articles";
 import home from "../pageobjects/home";
-import login from "../pageobjects/login";
 
 describe(' IF Web_Admin_Panel: DashBoard/Home Module TestCases : ', () => {
   

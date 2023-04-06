@@ -27,7 +27,16 @@
     },
     "scripts": {
         "test": "wdio run wdio.conf.js",
+        "login": "wdio run wdio.conf.js --suite login",
+        "home": "wdio run wdio.conf.js --suite home",
+        "blogArticles": "wdio run wdio.conf.js --suite blogArticles",
+        "blogCategories": "wdio run wdio.conf.js --suite blogCategories",
+        "blogTags": "wdio run wdio.conf.js --suite blogTags",
+        "galleryCategories": "wdio run wdio.conf.js --suite galleryCategories",
+        "galleryCards": "wdio run wdio.conf.js --suite galleryCards",
+        "seoEditor": "wdio run wdio.conf.js --suite seoEditor",
         "complete": "wdio run wdio.conf.js --suite complete",
+        "e2e": "wdio run wdio.conf.js --suite e2e",
         "allure-report": "allure generate --clean allure-results && allure open"
     },
     "dependencies": {

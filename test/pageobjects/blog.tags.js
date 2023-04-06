@@ -1,5 +1,6 @@
 import { data } from '../general/constants.js';
 import Page from "../basepage/page"
+import home from './home.js';
 
 class BlogTagsPage extends Page {
     get addBlogTags(){

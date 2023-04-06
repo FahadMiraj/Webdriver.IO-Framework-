@@ -1,8 +1,6 @@
 import { data } from '../general/constants.js';
 import Page from "../basepage/page"
-import { title } from 'wd/lib/commands.js';
 import home from './home.js';
-import { keys } from 'wd/lib/commands';
 
 class seoEditor extends Page {
 

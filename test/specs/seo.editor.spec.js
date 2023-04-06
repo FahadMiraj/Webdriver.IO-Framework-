@@ -1,15 +1,6 @@
 import { assert } from "chai";
-import Page from "../basepage/page";
 import { data } from "../general/constants";
-import blogArticles from "../pageobjects/blog.articles";
-import blogCategories from "../pageobjects/blog.categories";
-import blogTags from "../pageobjects/blog.tags";
-import galleryCategories from "../pageobjects/gallery.categories";
-import home from "../pageobjects/home";
-import login from "../pageobjects/login";
-import { keys } from 'wd/lib/commands';
 import seoEditor from "../pageobjects/seo.editor";
-const path = require('path')
 
 describe('IF Web_Admin_Panel- SEO-Editor_Page : ', () => {
     it('verify SEO-Editor_Page Title', async() => {

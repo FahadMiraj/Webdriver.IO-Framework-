@@ -1,9 +1,6 @@
 import { assert } from "chai";
 import { data } from "../general/constants";
 import blogArticles from "../pageobjects/blog.articles";
-import home from "../pageobjects/home";
-import login from "../pageobjects/login";
-const path = require('path')
 
 describe('IF Web_Admin_Panel- BlogArticle_Page : ', () => {
     
@@ -66,18 +63,17 @@ describe('IF Web_Admin_Panel- BlogArticle_Page : ', () => {
         await blogArticles.doVerifyPreviewOnNewTab()
         await expect(blogArticles.titleOnPreviewPage).toBeEnabled()
         await expect(blogArticles.titleOnPreviewPage).toBeDisplayed()
+
     });
     it('verify that all Blog Article should be deleted successfully ', async () => {
         await blogArticles.doDeleteCreatedBlogArticle(data.SearchArticleText)
         await expect(blogArticles.BlogArticleNoData).toBeEnabled()
         await expect(blogArticles.BlogArticleNoData).toBeDisplayed()
     });
-    it.skip('Verify that when a user fills all the field and click save button with selecting Yes publish option then Blog Article should be created', async () => {
-        await home.Click_IF()
-        await home.Click_Blog()
-        await home.Click_BlogArticle()
-        await blogArticles.doAddArticle()
-        
+    it('verify that when a user fills all the field and click save button with selecting Yes publish option then Blog Article should be created, after verifying it should be deleted successfully ', async () => {
+        await blogArticles.doCreateBlogArticleWithPublish(data.PublishArticleTitle,data.ArticleThumbnail,data.ArticleCover,data.ArticleDescription,data.ArticleContent)
+        await expect(blogArticles.BlogArticleNoData).toBeEnabled()
+        await expect(blogArticles.BlogArticleNoData).toBeDisplayed()
     });
     
     

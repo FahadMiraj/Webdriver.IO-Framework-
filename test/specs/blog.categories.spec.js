@@ -1,16 +1,11 @@
 import { assert } from "chai";
-import Page from "../basepage/page";
 import { data } from "../general/constants";
-import blogArticles from "../pageobjects/blog.articles";
 import blogCategories from "../pageobjects/blog.categories";
-import home from "../pageobjects/home";
-import login from "../pageobjects/login";
-const path = require('path')
 
 describe('IF Web_Admin_Panel- BlogCategories_Page : ', () => {
     
     it('verify BlogCategories_Page Title', async() => {
-        blogCategories.navigateToBlogCategories()
+        await blogCategories.navigateToBlogCategories()
         const title = await blogCategories.getBlogCategoryPageTitle()
         console.log('Blog Categories Page Title is :', title)
         assert.equal(data.BlogCategoryPageTitle, title, data.ErrorMsg)

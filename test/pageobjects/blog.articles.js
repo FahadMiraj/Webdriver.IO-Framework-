@@ -80,6 +80,9 @@ class BlogArticlePage extends Page {
     get articleCategoryOption(){
         return $("(//*[contains(text(),'Blog category-58751')])[1]")
     }
+    get articlePublishCategoryOption(){
+        return $("(//*[contains(text(),'Knowledge')])[1]")
+    }
     get articleTags(){
         return $("(//input[contains(@class,'ant-input ant-input-lg formInputText')])[3]")
     }
@@ -106,6 +109,9 @@ class BlogArticlePage extends Page {
     }
     get titleOnPreviewPage(){
         return $("//*[contains(text(),'Testing12')]")
+    }
+    get articlePublishTitleOnBetaPage(){
+        return $("//*[contains(text(),'WebdriverIO Testing')]")
     }
 
 
@@ -251,10 +257,49 @@ async doDeleteCreatedBlogArticle(title){
 async refresh(){
     super.doRefresh()
 }
-async createBlogArticleWithPublish(title,thumbnailpath,coverimagepath,desciption,content){
-    await this.createBlogArticleWithoutPublish(title,thumbnailpath,coverimagepath,desciption,content)
-    await super.doClick(this.PublishwithYes)
-    //super.doClick(this.saveArticleBtn)
+async doCreateBlogArticleWithPublish(title,thumbnailPath,coverImagePath,description,content){
+    await super.doClick(this.addBlogArticle)
+    await super.doWait()
+    await super.doSetValue(this.inputArticleTitle,title)
+    await super.doWait()
+    await super.doClick(this.articleCategorySelector)
+    await super.doWait()
+    await super.doScrollToObject(this.articleCategoryScrollingObject)
+    await super.doScrollToObject(this.articleCategoryOption)
+    await super.doScrollToObject(this.articlePublishCategoryOption)
+    await super.doWait()
+    await super.doClick(this.articlePublishCategoryOption)
+    await super.doWait()
+    await super.doClick(this.articleAuthorSelector)
+    //await super.doWait()
+    //await super.doScrollToObject(this.articleAuthorScrollingObject)
+    await super.doWait()
+    await super.doClick(this.articleAuthorOption)
+    await super.doWait()
+    await super.addImageToInputField(thumbnailPath,this.thumbnailImage)
+    await super.addImageToInputField(coverImagePath,this.titleCoverImage)
+    await super.doWait()
+    await super.doSetValue(this.inputArticleDescription,description)
+    await super.doSetValue(this.inputArticleContent,content)
+    await super.doScroll()
+    await super.doClick(this.PublishWithYes)
+    await super.doClick(this.PublishWithNo)
+    await super.doWait()
+    await super.doClick(this.PublishWithYes)
+    await super.doWait()
+    await super.doClick(this.saveArticleBtn)
+    await super.doWait()
+    await super.doWait()
+    await super.scrollUp()
+    await this.doSearchBlogArticle(title)
+    await super.doWait()
+    await super.openLinkInNewTab(data.IF_Beta_URL,this.articlePublishTitleOnBetaPage)
+    await super.doWait()
+    await super.doClick(this.selectActionArticle)
+    await super.doWait()
+    await super.doClick(this.deleteArticle)
+    await super.doWait()
+    await super.doClick(this.deleteYesArticle)
 }
 
 }

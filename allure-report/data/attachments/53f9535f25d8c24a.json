@@ -1,9 +1,0 @@
-{
-  "script": "return (function (el) {\n            if (!el || !el.getBoundingClientRect) {\n                return;\n            }\n            const { left, top, width, height } = el.getBoundingClientRect();\n            return {\n                x: left + this.scrollX,\n                y: top + this.scrollY,\n                width,\n                height\n            };\n        }).apply(null, arguments)",
-  "args": [
-    {
-      "element-6066-11e4-a52e-4f735466cecf": "04f3fc67-4cc4-4484-8c7b-f090e8cce62f",
-      "ELEMENT": "04f3fc67-4cc4-4484-8c7b-f090e8cce62f"
-    }
-  ]
-}

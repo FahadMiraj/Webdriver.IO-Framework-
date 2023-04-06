@@ -1,4 +1,3 @@
-import { keys } from 'wd/lib/commands';
 const path = require('path');
 export default class Page {
 
@@ -94,8 +93,10 @@ export default class Page {
 
         // Switch to the new tab
         await browser.switchToWindow(newHandle);
-        await browser.pause(3000)
+        await browser.pause(6000)
+        await browser.closeWindow();
         await browser.switchToWindow(currentHandle)
+       
         
     }
     async selectDropdownOption(selector, optionText) {
@@ -115,40 +116,53 @@ export default class Page {
         await window.scrollBy(0, -window.innerHeight);
         });
       }
-      async scrollDown() {
+    async scrollDown() {
         await browser.execute( async () => {
-        await window.scrollBy(0, window.innerHeight);
+        window.scrollBy(0, window.innerHeight);
         });
       }
-      async scrollUntilItemDisplayed(dropdownSelector, itemText) {
-        const dropdown = await $(dropdownSelector);
-        await dropdown.waitForDisplayed();
-        await dropdown.click();
       
-        while (true) {
-          const items = await $$(`${dropdownSelector} option`);
-          const selectedItem = items.find((item) => item.getText().includes(itemText));
-          
-          if (selectedItem) {
-            await selectedItem.scrollIntoView();
-            await selectedItem.click();
-            break;
-          }
-          
-          await browser.executeScript('arguments[0].scrollBy(0, 50)', dropdown);
-          await browser.pause(500);
-        }
-      }
-
-      async clearText(element){
+    async clearText(element){
         await element.click()
         await browser.keys(['Control','a'])
         await browser.keys('Backspace')
 
       }
+
+      async openLinkInNewTab(url,objectLocator) {
+        // Get the handle of the current tab
+        const currentTabHandle = await browser.getWindowHandle();
+      
+        // Open a new tab with the specified URL
+        await browser.newWindow(url);
+      
+        // Switch to the new tab
+        const windowHandles = await browser.getWindowHandles();
+        const newTabHandle = windowHandles.find(handle => handle !== currentTabHandle);
+        await browser.switchToWindow(newTabHandle);
+      
+        // Wait for the new tab to finish loading
+        browser.waitUntil(() => {
+          return browser.execute(() => document.readyState) === 'complete';
+        }, {
+          timeout: 10000,
+          timeoutMsg: 'New tab did not finish loading within 10 seconds'
+        });
+      
+        // Do something on the new tab
+        // ...
+        await this.specialScroll(objectLocator)
+        await expect(objectLocator).toBeEnabled()
+        await expect(objectLocator).toBeDisplayed()
+
+        // Switch back to the previous tab
+        browser.switchToWindow(currentTabHandle);
+      
+        // Close the new tab
+        await browser.closeWindow();
+      }
     
      /*
       */
-
       
 }

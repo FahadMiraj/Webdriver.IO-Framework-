@@ -17,6 +17,7 @@ export const data = {
     ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
     BlogArticlePageTitle:'Admin Panel | IslamicFinder',
     ArticleTitle:"Testing12",
+    PublishArticleTitle:"WebdriverIO Testing",
     ArticleCategory:"$('//*[contains(text(),'Women Guide')])[1]')",
     ArticleAuthor:"$('//*[contains(text(),'Hammad Shabbir')])[1]')",
     ArticleTagSelection:"(//*[contains(text(),'Ramadan 2017')])[1]",

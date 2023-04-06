@@ -1,5 +1,6 @@
 import { data } from '../general/constants.js';
 import Page from "../basepage/page"
+import home from './home.js';
 
 class GalleryCardsPage extends Page {
     get uploadGalleryCards(){
@@ -104,6 +105,7 @@ class GalleryCardsPage extends Page {
         await super.doWait()
         await super.doClick(this.uploadGalleryCards)
         await this.GalleryCardPageHeader.waitForDisplayed()
+        await super.doWait()
         await super.doSetValue(this.inputGalleryCardTitle,title)
         await super.doWait()
         await super.doClick(this.selectCardCategory)
