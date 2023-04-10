@@ -109,8 +109,8 @@ export const config = {
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: ['--whitelisted-ips= 127.0.0.1,192.168.0.102'],
-            //args: ['--no-sandbox'],
-            //args: ['--headless', '--disable-gpu']
+            args: ['--no-sandbox'],
+            args: ['--headless', '--disable-gpu']
           },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
