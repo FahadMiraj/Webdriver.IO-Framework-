@@ -37,6 +37,7 @@
         "seoEditor": "wdio run wdio.conf.js --suite seoEditor",
         "complete": "wdio run wdio.conf.js --suite complete",
         "e2e": "wdio run wdio.conf.js --suite e2e",
+        "allureClean": "allure generate --clean allure-results",
         "allure-report": "allure generate --clean allure-results && allure open"
     },
     "dependencies": {
