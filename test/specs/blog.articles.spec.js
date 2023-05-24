@@ -42,7 +42,6 @@ describe('IF Web_Admin_Panel- BlogArticle_Page : ', () => {
         await expect(blogArticles.BlogArticleNoData).toBeDisplayed()
     });
     it('verify the Blog Article editing functionality ', async () => {
-        //await blogArticles.refresh()
         await blogArticles.doEditBlogArticle(data.ArticleTitle,data.ArticleThumbnail,data.ArticleCover,data.ArticleDescription,data.ArticleContent,data.EditArticleTitle,data.EditArticleThumbnail,data.EditArticleCover,data.EditArticleDescription,data.EditArticleContent)
         await expect(blogArticles.blogArticleUpdatedMsg).toBeEnabled()
         await expect(blogArticles.addBlogArticle).toBeDisplayed()

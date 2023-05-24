@@ -90,44 +90,35 @@ class HomePage extends Page{
         return await super.doGetText(this.homeIF_header)
     }
     async Click_IF(){
-        await super.doWait()
         return await super.doClick(this.homeIF_header)
     }
     async Click_Blog(){
-        await super.doWait()
         return await super.doClick(this.Blog)
     }
     async Click_BlogArticle(){
-        await super.doWait()
         return await super.doClick(this.Blog_Articles)
     }
     async Click_BlogTags(){
-        await super.doWait()
         return await super.doClick(this.Blog_Tags)
     }
     async Click_BlogCategories(){
-        await super.doWait()
         return await super.doClick(this.Blog_Categories)
     }
     async Click_Gallery(){
-        await super.doWait()
         return await super.doClick(this.Gallery)
     }
     async Click_GalleryCards(){
-        await super.doWait()
         return super.doClick(this.Gallery_Cards)
     }
     async Click_GalleryCategories(){
-        await super.doWait()
         return await super.doClick(this.Gallery_Categories)
     }
     async Click_SEO(){
-        await super.doWait()
         return await super.doClick(this.SEO_Editor)
     }
     
     async refresh(){
-         super.doRefresh()
+        await super.doRefresh()
     }
 
 }

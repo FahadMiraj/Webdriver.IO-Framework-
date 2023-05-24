@@ -34,7 +34,7 @@ describe('IF Web_Admin_Panel- GalleryCards_Page : ', () => {
         await expect(galleryCards.uploadGalleryCards).toBeDisplayed()
         
     });
-    ////////
+    
     it('verify the Gallery Cards deleting functionality ', async () => {
         await galleryCards.doDeleteGalleryCard(data.GalleryCardsTitle,data.GalleryCardsDescription,data.CardThumbnail,data.CardImage)
         await expect(galleryCards.GalleryCardsNoData).toBeEnabled()
@@ -42,7 +42,6 @@ describe('IF Web_Admin_Panel- GalleryCards_Page : ', () => {
     });
     
     it('verify the Gallery Cards editing functionality ', async () => {
-        //await galleryCards.refresh()
         await galleryCards.doEditGalleryCards(data.GalleryCardsTitle,data.GalleryCardsDescription,data.CardThumbnail,data.CardImage,data.EditGalleryCardsTitle,data.EditGalleryCardsDescription,data.EditCardThumbnail,data.EditCardImage)
         await expect(galleryCards.GalleryCardUpdatedMsg).toBeEnabled()
         

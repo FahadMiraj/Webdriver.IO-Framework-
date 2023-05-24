@@ -1,29 +1,28 @@
 const path = require('path');
 export default class Page {
 
-    open (path) {
-        browser.url(`https://qa-admin.islamicfinder.org/${path}`)
-        browser.maximizeWindow()
-    }
-    
     async doClick(element){
     await element.waitForDisplayed()
+    await element.waitForClickable()
     await element.click()
 
     }
     doSetValue(element,value){
         element.waitForDisplayed()
+        element.waitForClickable()
         element.clearValue()
         element.setValue(value)
     }
 
     doGetText(element){
         element.waitForDisplayed()
+        element.waitForClickable()
         return element.getText()
 
     }
     doIsDisplayed(element){
         element.waitForDisplayed()
+        element.waitForClickable()
         return element.isDisplayed()
 
     }
@@ -65,12 +64,9 @@ export default class Page {
         await inputFieldSelector.setValue(remotefilepath)
         await browser.pause(5000)
       }
-    async doWait(){
-        await browser.pause(2000)
-    }
     async doRefresh(){
         await browser.refresh()
-    }
+        }
 
     async switchToNewTab (linkElement) {
         

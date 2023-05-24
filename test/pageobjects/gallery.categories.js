@@ -18,10 +18,13 @@ class GalleryCategoriesPage extends Page {
     get GalleryCategoryNoData(){
         return $("//div[contains(@class,'ant-empty-description')]")
     }
+    get userProfile(){
+        return $("//button[contains(@class,'ant-btn ant-btn-text ant-dropdown-trigger pp-username')]")
+    }
     ////////adding details for Gallery Categories page getters///////////
 
     get GalleryCategoriesHeader(){
-        return $("#rcDialogTitle0")
+        return $("//div[contains(@class,'ant-modal-title')]")
     }
     get inputGalleryCategoriesTitle(){
         return $("#title")
@@ -52,7 +55,7 @@ class GalleryCategoriesPage extends Page {
         return $("(//div[contains(@class,'ant-select-item-option-content')])[1]")
     }
     get editGalleryCategoriesPopupHeader(){
-        return $("#rcDialogTitle6")
+        return $("//div[contains(@class,'ant-modal-title')]")
     }
     get inputGalleryCategoriesEditTitle(){
         return $("#title")
@@ -71,9 +74,13 @@ class GalleryCategoriesPage extends Page {
         return $("//span[contains(text(),'OK')]")
         
     }
+    get spinLoader(){
+        return $("//div[contains(@class,'ant-spin ant-spin-spinning')]")
+    }
 
 /////////// Page Action ///////
 async navigateToGalleryCategories(){
+    await this.userProfile.waitForDisplayed()
     await home.refresh()
     await home.Click_IF()
     await home.Click_Gallery()
@@ -96,71 +103,58 @@ async doClickCancelGalleryCategoriesPopup(){
 }
 async doClickCloseAddGalleryCategoriesPopup(){
     await this.doAddGalleryCategories()
-    await super.doWait()
     await super.doClick(this.GalleryCategoriesCrossBtn)
 
 }
 async doCreateGalleryCategories(title,description){
     await super.doClick(this.addGalleryCategory)
+    await this.spinLoader.waitForDisplayed({reverse:true})
     await this.GalleryCategoriesHeader.waitForDisplayed()
-    await super.doWait()
+    await this.inputGalleryCategoriesTitle.waitForClickable()
     await super.doSetValue(this.inputGalleryCategoriesTitle,title)
-    await super.doWait()
+    await this.inputGalleryCategoriesDescription.waitForDisplayed()
     await super.doSetValue(this.inputGalleryCategoriesDescription,description)
-    await super.doWait()
+    await this.GalleryCategoriesSaveBtn.waitForClickable()
     await super.doClick(this.GalleryCategoriesSaveBtn)
     await this.GalleryCategoriesAddedMsg.waitForDisplayed()
 }
 async doSearchGalleryCategories(title){
     await super.doIsDisplayed(this.inputGalleryCategorySearch)
-    await super.doWait()
+    await this.inputGalleryCategorySearch.waitForClickable()
     await super.doSetValue(this.inputGalleryCategorySearch,title)
-    await super.doWait()
+    await this.GalleryCategorySearchBtn.waitForClickable()
     await super.doClick(this.GalleryCategorySearchBtn)
-    await super.doWait()
 }  
 async doEditGalleryCategories(title,description,editTitle,editDescription){
-    await super.doWait()
+
     await this.doCreateGalleryCategories(title,description)
     await this.doSearchGalleryCategories(title)
-    await super.doWait()
+    await this.selectActionGalleryCategories.waitForDisplayed()
     await super.doClick(this.selectActionGalleryCategories)
-    await super.doWait()
+    await this.editGalleryCategories.waitForClickable()
     await super.doClick(this.editGalleryCategories)
     await this.inputGalleryCategoriesEditTitle.waitForClickable()
     await super.doSetValue(this.inputGalleryCategoriesEditTitle,editTitle)
-    await super.doWait()
     await super.doSetValue(this.inputGalleryCategoriesEditDescription,editDescription)
-    await super.doWait()
     await super.doClick(this.GalleryCategoriesSaveBtn)
 }
 async doDeleteGalleryCategories(title,description){
-    await super.doWait()
     await this.doCreateGalleryCategories(title,description)
-    await super.doWait()
     await this.doSearchGalleryCategories(title)
-    await super.doWait()
     await super.doClick(this.selectActionGalleryCategories)
-    await super.doWait()
+    await this.deleteGalleryCategories.waitForClickable()
     await super.doClick(this.deleteGalleryCategories)
-    await super.doWait()
     await super.doClick(this.deleteOkGalleryCategories)
 }
 async doDeleteCreatedGalleryCategories(title){
-    await super.doWait()
     await this.refresh()
     await this.doSearchGalleryCategories(title)
-    await super.doWait()
     await super.doClick(this.selectActionGalleryCategories)
-    await super.doWait()
+    await this.deleteGalleryCategories.waitForClickable()
     await super.doClick(this.deleteGalleryCategories)
-    await super.doWait()
     await super.doClick(this.deleteOkGalleryCategories)
-    await super.doWait()
     await super.doClick(this.selectActionGalleryCategories)
-    await super.doWait()
     await super.doClick(this.deleteGalleryCategories)
-    await super.doWait()
     await super.doClick(this.deleteOkGalleryCategories)
 }
 async refresh(){

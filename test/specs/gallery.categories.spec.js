@@ -28,7 +28,7 @@ describe('IF Web_Admin_Panel- GalleryCategories_Page : ', () => {
         //await expect(blogArticles.addArticleHeader).toBeDisplayed()
         //await expect(blogArticles.addArticleHeader).not.toBeClickable()
     });
-    ////////////////
+    
     it('verify that on clicking cancel button, it should close the Gallery Category popup ', async () => {
         await galleryCategories.doClickCancelGalleryCategoriesPopup()
         await expect(galleryCategories.addGalleryCategory).toBeDisplayed()

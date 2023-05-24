@@ -18,10 +18,13 @@ class BlogTagsPage extends Page {
     get BlogTagsNoData(){
         return $("//div[contains(@class,'ant-empty-description')]")
     }
+    get userProfile(){
+        return $("//button[contains(@class,'ant-btn ant-btn-text ant-dropdown-trigger pp-username')]")
+    }
         ////////adding details for blog Category page getters///////////
 
         get BlogTagsHeader(){
-            return $("#rcDialogTitle0")
+            return $("//div[contains(@class,'ant-modal-title')]")
         }
         get inputBlogTagsName(){
             return $("#name")
@@ -49,7 +52,7 @@ class BlogTagsPage extends Page {
             return $("(//div[contains(@class,'ant-select-item-option-content')])[1]")
         }
         get editTagsPopupHeader(){
-            return $("#rcDialogTitle2")
+            return $("//div[contains(@class,'ant-modal-title')]")
         }
         get inputTagsEditText(){
             return $("#name")
@@ -65,9 +68,13 @@ class BlogTagsPage extends Page {
             return $("//span[contains(text(),'OK')]")
             
         }
+        get spinLoader(){
+        return $("//div[contains(@class,'ant-spin ant-spin-spinning')]")
+    }
     
     /////////// Page Action ///////
 async navigateToBlogTags(){
+    await this.userProfile.waitForDisplayed()
     await home.refresh()
     await home.Click_IF()
     await home.Click_Blog()
@@ -87,75 +94,56 @@ async TapsViewAll(){
     return await super.doClick(this.BlogTagsAllBtn)
 }    
 async doClickCancelAddTagsPopup(){
-    await super.doClick(this.BlogTagsCancelBtn)
+    return await super.doClick(this.BlogTagsCancelBtn)
 }
 async doClickCloseAddTagsPopup(){
     await this.doAddBlogTags()
-    await super.doWait()
+    await this.inputBlogTagsName.waitForClickable()
     await super.doClick(this.BlogTagsCrossBtn)
 
 }
 async doCreateBlogTags(title){
     await super.doClick(this.addBlogTags)
-    await this.BlogTagsHeader.waitForDisplayed()
-    await super.doWait()
-    await this.inputBlogTagsName.clearValue()
-    super.doSetValue(this.inputBlogTagsName,title)
-    await super.doWait()
+    await this.spinLoader.waitForDisplayed({reverse:true})
+    await this.inputBlogTagsName.waitForClickable()
+    //await this.inputBlogTagsName.clearValue()
+    await super.doSetValue(this.inputBlogTagsName,title)
     await super.doClick(this.BlogTagsSaveBtn)
     await this.BlogTagsAddedMsg.waitForDisplayed()
 }
 async doSearchBlogTags(title){
     await super.doIsDisplayed(this.inputBlogTagsSearch)
-    await super.doWait()
-    //await this.inputBlogTagsSearch.clearValue()
     await super.doSetValue(this.inputBlogTagsSearch,title)
-    await super.doWait()
     await super.doClick(this.BlogTagsSearchBtn)
-    await super.doWait()
 
 }
 async doEditBlogTags(title,editTitle){
-    await super.doWait()
     await this.doCreateBlogTags(title)
     await this.doSearchBlogTags(title)
-    await super.doWait()
+    await this.selectActionTags.waitForDisplayed()
     await super.doClick(this.selectActionTags)
-    await super.doWait()
     await super.doClick(this.editTags)
     await this.inputTagsEditText.waitForClickable()
-    await this.inputTagsEditText.clearValue()
     await super.doSetValue(this.inputTagsEditText,editTitle)
-    await super.doWait()
     await super.doClick(this.BlogTagsSaveBtn)
 }
 async doDeleteBlogTags(title){
-    await super.doWait()
     await this.doCreateBlogTags(title)
-    await super.doWait()
     await this.doSearchBlogTags(title)
-    await super.doWait()
+    await this.selectActionTags.waitForDisplayed()
     await super.doClick(this.selectActionTags)
-    await super.doWait()
     await super.doClick(this.deleteTags)
-    await super.doWait()
     await super.doClick(this.deleteOkTags)
 }
 async doDeleteCreatedBlogTags(title){
-    await super.doWait()
     await this.refresh()
     await this.doSearchBlogTags(title)
-    await super.doWait()
+    await this.selectActionTags.waitForDisplayed()
     await super.doClick(this.selectActionTags)
-    await super.doWait()
     await super.doClick(this.deleteTags)
-    await super.doWait()
     await super.doClick(this.deleteOkTags)
-    await super.doWait()
     await super.doClick(this.selectActionTags)
-    await super.doWait()
     await super.doClick(this.deleteTags)
-    await super.doWait()
     await super.doClick(this.deleteOkTags)
 }
 async refresh(){

@@ -18,10 +18,13 @@ class BlogCategoriesPage extends Page {
     get BlogCategoryNoData(){
         return $("//div[contains(@class,'ant-empty-description')]")
     }
+    get userProfile(){
+        return $("//button[contains(@class,'ant-btn ant-btn-text ant-dropdown-trigger pp-username')]")
+    }
     ////////adding details for blog Category page getters///////////
 
     get BlogCategoryHeader(){
-        return $("#rcDialogTitle0")
+        return $("//div[contains(@class,'ant-modal-title')]")
     }
     get inputBlogCategoryName(){
         return $("#name")
@@ -46,7 +49,7 @@ class BlogCategoriesPage extends Page {
         return $("(//div[contains(@class,'ant-select-item-option-content')])[1]")
     }
     get editPopupHeader(){
-        return $("#rcDialogTitle0")
+        return $("//div[contains(@class,'ant-modal-title')]")
     }
     get inputCategoryEditText(){
         return $("#name")
@@ -62,13 +65,18 @@ class BlogCategoriesPage extends Page {
         return $("//span[contains(text(),'OK')]")
         
     }
+    get spinLoader(){
+        return $("//div[contains(@class,'ant-spin ant-spin-spinning')]")
+    }
 
     /////////// Page Action ///////
 async navigateToBlogCategories(){
+    await this.userProfile.waitForDisplayed()
     await home.refresh()
     await home.Click_IF()
     await home.Click_Blog()
     await home.Click_BlogCategories()
+    await this.addBlogCategory.waitForDisplayed()
 }
 
 async getBlogCategoryPageTitle(){
@@ -84,83 +92,69 @@ async getHeader_CategoryPopup(){
     return await super.doGetText(this.BlogCategoryHeader)
 }
 async TapsViewAll(){
-    await super.doClick(this.BlogCategoryAllBtn)
+    return await super.doClick(this.BlogCategoryAllBtn)
 }
 async doSetBlogCategoryTitle(title){
-    super.doSetValue(this.inputBlogCategoryName,title)
+    return await super.doSetValue(this.inputBlogCategoryName,title)
 
 }
 async doClickCancelAddCategoryPopup(){
-    await super.doClick(this.BlogCategoryCancelBtn)
+    return await super.doClick(this.BlogCategoryCancelBtn)
 
 }
 async doClickCloseAddCategoryPopup(){
     await this.doAddBlogCategory()
-    await super.doWait()
     await super.doClick(this.BlogCategoryCrossBtn)
 
 }
 async doCreateBlogCategory(title){
     await super.doClick(this.addBlogCategory)
     await this.BlogCategoryHeader.waitForDisplayed()
-    await super.doWait()
-    await this.inputBlogCategoryName.clearValue()
-    super.doSetValue(this.inputBlogCategoryName,title)
-    await super.doWait()
+    await this.inputBlogCategoryName.waitForClickable()
+    await super.doSetValue(this.inputBlogCategoryName,title)
     await super.doClick(this.BlogCategorySaveBtn)
-    await this.BlogCategoryAddedMsg.waitForDisplayed()
+    await this.spinLoader.waitForDisplayed({reverse:true})
+    //await this.BlogCategoryAddedMsg.waitForDisplayed()
 }
 async doSearchBlogCategory(title){
+    await this.spinLoader.waitForDisplayed({reverse:true})
     await super.doIsDisplayed(this.inputCategorySearch)
-    await super.doWait()
-    await this.inputCategorySearch.clearValue()
     await super.doSetValue(this.inputCategorySearch,title)
-    await super.doWait()
+    await this.selectAction.waitForDisplayed()
     await super.doClick(this.BlogCategorySearchBtn)
-    await super.doWait()
 
 }
 async doEditBlogCategory(title,editTitle){
-    await super.doWait()
     await this.doCreateBlogCategory(title)
     await this.doSearchBlogCategory(title)
-    await super.doWait()
+    await this.spinLoader.waitForDisplayed({reverse:true})
+    //await this.selectAction.waitForDisplayed()
     await super.doClick(this.selectAction)
-    await super.doWait()
     await super.doClick(this.edit)
     await this.inputCategoryEditText.waitForClickable()
-    await this.inputCategoryEditText.clearValue()
     await super.doSetValue(this.inputCategoryEditText,editTitle)
-    await super.doWait()
     await super.doClick(this.BlogCategorySaveBtn)
 
 }
 async doDeleteBlogCategory(title){
-    await super.doWait()
     await this.doCreateBlogCategory(title)
     await this.doSearchBlogCategory(title)
-    await super.doWait()
+    await this.spinLoader.waitForDisplayed({reverse:true})
+    await this.selectAction.waitForDisplayed()
     await super.doClick(this.selectAction)
-    await super.doWait()
     await super.doClick(this.delete)
-    await super.doWait()
     await super.doClick(this.deleteOK)
 }
 async doDeleteCreatedBlogCategory(title){
-    await super.doWait()
     await this.refresh()
     await this.doSearchBlogCategory(title)
-    await super.doWait()
+    await this.spinLoader.waitForDisplayed({reverse:true})
+    await this.selectAction.waitForDisplayed()
     await super.doClick(this.selectAction)
-    await super.doWait()
     await super.doClick(this.delete)
-    await super.doWait()
     await super.doClick(this.deleteOK)
-    await super.doWait()
     await super.doClick(this.selectAction)
-    await super.doWait()
     await super.doClick(this.delete)
-    await super.doWait()
     await super.doClick(this.deleteOK)
 }
 async refresh(){

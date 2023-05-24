@@ -6,8 +6,8 @@ export const data = {
     IF_Beta_URL:"https://beta.islamicfinder.org/news/",
     
     ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
-    emailID: 'faisal.ali@venturedive.com',
-    password: '12345678',
+    emailID: 'bilal.mubarik@venturedive.com',
+    password: 'bilal.1234',
     LoginPageTitle:'Admin Panel | IslamicFinder',
 
     ////////////////////ADD BLOG_ARTICLE DATA////////////////////////
@@ -18,9 +18,6 @@ export const data = {
     BlogArticlePageTitle:'Admin Panel | IslamicFinder',
     ArticleTitle:"Testing12",
     PublishArticleTitle:"WebdriverIO Testing",
-    ArticleCategory:"$('//*[contains(text(),'Women Guide')])[1]')",
-    ArticleAuthor:"$('//*[contains(text(),'Hammad Shabbir')])[1]')",
-    ArticleTagSelection:"(//*[contains(text(),'Ramadan 2017')])[1]",
     SearchArticleText:'Testing12',
     ArticleThumbnail:"../mediafiles/thumbnail.jpg",
     ArticleCover:"../mediafiles/article.covertitle.jpeg",
@@ -48,11 +45,11 @@ export const data = {
     BlogTagsPageTitle:'Admin Panel | IslamicFinder',
 
      ////////////////////ADD GALLERY_CATEGORIES DATA////////////////////////
-     GalleryCategoriesTitle:"Testing0",
+     GalleryCategoriesTitle:"Test0",
      GalleryCategoriesDescription:"Created For Testing",
-     EditGalleryCategoriesTitle:"123",
+     EditGalleryCategoriesTitle:" Created",
      EditGalleryCategoriesDescription:" Purpose",
-     GalleryCategoriesSearchingText:"Testing0",
+     GalleryCategoriesSearchingText:"Test0",
      GalleryCategoriesHeader:"",
      GalleryCategoriesPageTitle:'Admin Panel | IslamicFinder',
 
