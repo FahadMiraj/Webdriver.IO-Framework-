@@ -95,16 +95,19 @@ class GalleryCardsPage extends Page {
         return await super.doGetPageTitle(data.GalleryCardsPageTitle)
     }
     async doClickUploadGalleryCards(){
-        return await super.doClick(this.uploadGalleryCards)
+        await this.uploadGalleryCards.waitForDisplayed()
+        await super.doClick(this.uploadGalleryCards)
     }
     async getHeader_GalleryCardsPage(){
         return await super.doGetText(this.GalleryCardPageHeader)
     }
     async TapsViewAll(){
-        return await super.doClick(this.GalleryCardsAllBtn)
+        await this.GalleryCardsAllBtn.waitForClickable()
+        await super.doClick(this.GalleryCardsAllBtn)
     }    
     async doClickCancelUploadGalleryCardsPage(){
-        return await super.doClick(this.GalleryCardCancelBtn)
+        await this.GalleryCardCancelBtn.waitForClickable()
+        await super.doClick(this.GalleryCardCancelBtn)
     }
     async doUploadGalleryCard(title,description,thumbnail,card){
         await super.doClick(this.uploadGalleryCards)
@@ -117,12 +120,12 @@ class GalleryCardsPage extends Page {
         await super.doSetValue(this.inputGalleryCardDescription,description)
         await super.doScrollToObject(this.GalleryCardSaveBtn)
         await super.doClick(this.GalleryCardSaveBtn)
-        await this.spinLoader.waitForDisplayed({reverse:true})
+        await this.spinLoader.waitForDisplayed()
         await this.GalleryCardAddedMsg.waitForDisplayed()
     }
     async doCheckCreatedGalleryCards(){
         await this.uploadGalleryCards.waitForDisplayed()
-        await this.spinLoader.waitForDisplayed({reverse:true})
+        await this.spinLoader.waitForDisplayed()
         await this.refresh()
         await this.selectCardCategory.waitForClickable()
         await super.doClick(this.selectCardCategory)
@@ -132,10 +135,12 @@ class GalleryCardsPage extends Page {
     async doEditGalleryCards(title,description,thumbnail,card,editTitle,editDescription,editThumbnail,editCard){
         await this.doUploadGalleryCard(title,description,thumbnail,card)
         await this.doCheckCreatedGalleryCards()
-        await this.spinLoader.waitForDisplayed({reverse:true})
         await this.selectActionGalleryCard.waitForClickable()
         await super.doClick(this.selectActionGalleryCard)
         await super.doClick(this.editGalleryCard)
+        await this.inputGalleryCardThumbnailImage.waitForDisplayed()
+        await super.doClick(this.selectCardCategory)
+        await super.doClick(this.selectCardCategoryMenuItem)
         await super.addImageToInputField(editThumbnail,this.inputGalleryCardThumbnailImage)
         await super.addImageToInputField(editCard,this.inputGalleryCardImage)
         await super.doSetValue(this.inputGalleryCardEditTitle,editTitle)
@@ -147,7 +152,7 @@ class GalleryCardsPage extends Page {
         await this.refresh()
         await this.doUploadGalleryCard(title,description,thumbnail,card)
         await this.doCheckCreatedGalleryCards()
-        await this.spinLoader.waitForDisplayed({reverse:true})
+        await this.spinLoader.waitForDisplayed()
         await this.selectActionGalleryCard.waitForClickable()
         await super.doClick(this.selectActionGalleryCard)
         await super.doClick(this.deleteGalleryCard)
@@ -156,7 +161,7 @@ class GalleryCardsPage extends Page {
     async doDeleteCreatedGalleryCards(){
         await this.refresh()
         await this.doCheckCreatedGalleryCards()
-        await this.spinLoader.waitForDisplayed({reverse:true})
+        await this.spinLoader.waitForDisplayed()
         await this.selectActionGalleryCard.waitForClickable()
         await super.doClick(this.selectActionGalleryCard)
         await super.doClick(this.deleteGalleryCard)
