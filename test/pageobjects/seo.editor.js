@@ -94,6 +94,7 @@ class seoEditor extends Page {
     }
     async doCreateSeoPageWithoutPage(title,description,boxText){
         await super.doRefresh()
+        await this.seoEditorSelectPage.waitForDisplayed()
         await super.doClick(this.seoEditorSelectLanguage)
         await super.doClick(this.seoEditorInputLanguage)
         await expect(this.spinLoader).not.toBeDisplayed()
@@ -105,6 +106,7 @@ class seoEditor extends Page {
     }
     async doCreateSeoPageWithoutLanguage(title,description,boxText){
         await super.doRefresh()
+        await this.seoEditorSelectPage.waitForDisplayed()
         await super.doClick(this.seoEditorSelectPage)
         await super.doClick(this.seoEditorInputPage)
         await expect(this.spinLoader).not.toBeDisplayed()
@@ -116,6 +118,7 @@ class seoEditor extends Page {
     }
     async doCreateSeoPageWithoutTitle(description,boxText){
         await super.doRefresh()
+        await this.seoEditorSelectPage.waitForDisplayed()
         await super.doClick(this.seoEditorSelectPage)
         await super.doClick(this.seoEditorInputPage)
         await super.doClick(this.seoEditorSelectLanguage)
@@ -128,6 +131,7 @@ class seoEditor extends Page {
     }
     async doCreateSeoPageWithoutDesc(title,boxText){
         await super.doRefresh()
+        await this.seoEditorSelectPage.waitForDisplayed()
         await super.doClick(this.seoEditorSelectPage)
         await super.doClick(this.seoEditorInputPage)
         await super.doClick(this.seoEditorSelectLanguage)
@@ -140,6 +144,7 @@ class seoEditor extends Page {
     }
     async doCreateSeoPageWithoutBoxText(title,description){
         await super.doRefresh()
+        await this.seoEditorSelectPage.waitForDisplayed()
         await super.doClick(this.seoEditorSelectPage)
         await this.seoEditorInputPage.waitForDisplayed()
         await super.doClick(this.seoEditorInputPage)
@@ -154,6 +159,7 @@ class seoEditor extends Page {
     }
     async doCreateSeoPage(title,description,boxText){
         await super.doRefresh()
+        await this.seoEditorSelectPage.waitForDisplayed()
         await super.doClick(this.seoEditorSelectPage)
         await this.seoEditorInputPage.waitForDisplayed()
         await super.doClick(this.seoEditorInputPage)
